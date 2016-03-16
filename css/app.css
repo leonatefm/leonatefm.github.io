@@ -370,21 +370,33 @@ html {
 h1 {
   font-size: 56px;
   margin: 0; }
+  @media only screen and (max-width: 720px) {
+    h1 {
+      font-size: 32px; } }
 
 h2 {
   font-size: 28px;
   margin: 0;
   font-weight: 500; }
+  @media only screen and (max-width: 720px) {
+    h2 {
+      font-size: 20px; } }
 
 h3 {
   font-size: 24px;
   margin: 0;
   font-weight: 400; }
+  @media only screen and (max-width: 720px) {
+    h3 {
+      font-size: 18px; } }
 
 h4 {
   font-size: 20px;
   margin: 0;
   font-weight: 400; }
+  @media only screen and (max-width: 720px) {
+    h4 {
+      font-size: 16px; } }
 
 h5 {
   font-size: 16px;
@@ -421,6 +433,9 @@ a {
   position: fixed;
   top: 0px;
   z-index: 500; }
+  @media only screen and (max-width: 720px) {
+    .topnav {
+      height: 60px; } }
   .topnav .leftdiv {
     width: 50%;
     height: inherit;
@@ -429,16 +444,20 @@ a {
     .topnav .leftdiv h2 {
       margin-left: 40px;
       line-height: 80px; }
+      @media only screen and (max-width: 720px) {
+        .topnav .leftdiv h2 {
+          margin-left: 20px;
+          line-height: 60px; } }
   .topnav .rightdiv {
     width: 50%;
     height: inherit;
     float: left;
-    background-color: #121212; }
+    background-color: #121212;
+    color: #FFFFFF; }
     .topnav .rightdiv nav {
       float: right;
       margin-right: 40px; }
       .topnav .rightdiv nav a {
-        color: #FFFFFF;
         font-weight: 300;
         line-height: 80px;
         margin-left: 40px;
@@ -472,6 +491,18 @@ a {
             opacity: 1;
             filter: alpha(opacity=100);
             bottom: 24px; }
+      @media only screen and (max-width: 720px) {
+        .topnav .rightdiv nav {
+          display: none; } }
+    .topnav .rightdiv h1 {
+      line-height: 60px;
+      text-align: right;
+      padding-right: 20px;
+      display: none;
+      display: none; }
+      @media only screen and (max-width: 720px) {
+        .topnav .rightdiv h1 {
+          display: block; } }
 
 .about {
   width: 100%;
@@ -484,12 +515,23 @@ a {
     margin-top: 20vh;
     font-weight: 300;
     line-height: 1.2; }
+    @media only screen and (max-width: 720px) {
+      .about h1 {
+        margin-top: 30vh;
+        line-height: 1.5; } }
   .about p {
     margin-top: 30vh;
-    font-weight: 300; }
+    font-weight: 300;
+    padding: 0 30px; }
+    @media only screen and (max-width: 720px) {
+      .about p {
+        display: none; } }
   .about h5 {
     margin-top: 10vh;
     font-weight: 300; }
+    @media only screen and (max-width: 720px) {
+      .about h5 {
+        display: none; } }
   .about .leftdiv {
     width: 50%;
     height: inherit;
@@ -505,12 +547,11 @@ a {
       filter: alpha(opacity=80); }
     .about .leftdiv h1 {
       text-align: right;
-      padding-right: 30px;
+      padding: 0 30px 0 18px;
       position: relative;
       z-index: 100; }
     .about .leftdiv p {
-      text-align: right;
-      padding-right: 30px; }
+      text-align: right; }
     .about .leftdiv h5 {
       text-align: right; }
   .about .rightdiv {
@@ -532,8 +573,7 @@ a {
       text-align: left;
       padding-left: 30px; }
     .about .rightdiv p {
-      text-align: left;
-      padding-left: 30px; }
+      text-align: left; }
     .about .rightdiv h5 {
       text-align: left; }
 
@@ -550,10 +590,16 @@ a {
       height: 300px;
       color: #FFFFFF;
       cursor: pointer; }
+      @media only screen and (max-width: 720px) {
+        .projects ul.projects-list li {
+          height: 200px; } }
       .projects ul.projects-list li h4.org {
         padding: 25px 40px;
         text-align: right;
         font-weight: 400; }
+        @media only screen and (max-width: 720px) {
+          .projects ul.projects-list li h4.org {
+            padding: 20px 20px; } }
       .projects ul.projects-list li h1 {
         padding-top: 0px;
         text-align: center; }
@@ -561,6 +607,9 @@ a {
         padding-top: 20px;
         text-align: center;
         font-weight: 300; }
+        @media only screen and (max-width: 720px) {
+          .projects ul.projects-list li h4.role {
+            padding-top: 10px; } }
     .projects ul.projects-list li:nth-child(1) {
       background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/siq4l.jpg") center 0% no-repeat;
       background-size: 100%; }
@@ -574,31 +623,71 @@ a {
 .contact {
   position: relative;
   z-index: 200;
-  height: 540px; }
+  height: 100%; }
+  @media only screen and (max-width: 720px) {
+    .contact {
+      height: auto; } }
   .contact .leftdiv {
     width: 37.5%;
-    height: inherit;
+    height: 100%;
+    min-height: 540px;
     float: left;
     background: url("../images/avatar.jpg") center center no-repeat;
     background-size: auto 100%; }
+    @media only screen and (max-width: 720px) {
+      .contact .leftdiv {
+        display: none; } }
+  .contact .topdiv {
+    display: none;
+    width: 100%;
+    padding: 50px 0;
+    background-color: #FFFFFF; }
+    .contact .topdiv .wrapper {
+      width: 200px;
+      height: 200px;
+      margin: auto;
+      border-radius: 200px;
+      border: 1px solid #979797; }
+    .contact .topdiv .avatar {
+      width: 180px;
+      height: 180px;
+      margin: 10px auto;
+      border-radius: 180px;
+      background: url("../images/avatar.jpg") center center no-repeat;
+      background-size: auto 100%; }
+    @media only screen and (max-width: 720px) {
+      .contact .topdiv {
+        display: block; } }
   .contact .rightdiv {
     width: 62.5%;
-    height: inherit;
+    height: auto;
+    min-height: 500px;
+    padding-bottom: 40px;
     float: left;
     background-color: #FFFFFF;
     position: relative; }
+    @media only screen and (max-width: 720px) {
+      .contact .rightdiv {
+        width: 100%;
+        float: none; } }
     .contact .rightdiv p {
-      width: 80%;
       max-width: 640px;
       font-weight: 300;
       line-height: 2;
       margin: auto;
-      padding-top: 60px;
+      padding: 60px 100px 0;
       position: relative; }
       .contact .rightdiv p:before {
         content: url("../images/quote.svg");
         position: absolute;
-        left: -80px; }
+        left: 18px; }
+      @media only screen and (max-width: 720px) {
+        .contact .rightdiv p {
+          padding: 60px 40px 0; }
+          .contact .rightdiv p:before {
+            left: 50%;
+            top: -20px;
+            margin-left: -30px; } }
     .contact .rightdiv .resume {
       display: block;
       margin: 40px auto; }
@@ -607,6 +696,7 @@ a {
       font-weight: 300;
       margin: 10px 0; }
     .contact .rightdiv h2 {
+      padding: 15px 0;
       font-size: 32px;
       color: #5A5A5A;
       text-align: center; }

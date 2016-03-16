@@ -47,6 +47,24 @@ $btn-dark: #121212;
   }
 }
 
+@mixin bp-large {
+  @media only screen and (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin bp-medium {
+  @media only screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin bp-small {
+  @media only screen and (max-width: 720px) {
+    @content;
+  }
+}
+
 // ******************
 // *** Typography *** 
 // ******************
@@ -69,23 +87,35 @@ html{
 h1{
 	font-size: 56px;
 	margin: 0;
+	@include bp-small {
+		font-size: 32px;
+	}
 }
 
 h2{
 	font-size: 28px;
 	margin: 0;
 	font-weight: $font-weight-medium;
+	@include bp-small {
+		font-size: 20px;
+	}
 }
 
 h3{
 	font-size: 24px;
 	margin: 0;
 	font-weight: $font-weight-normal;
+	@include bp-small {
+		font-size: 18px;
+	}
 }
 h4{
 	font-size: 20px;
 	margin: 0;
 	font-weight: $font-weight-normal;
+	@include bp-small {
+		font-size: 16px;
+	}
 }
 h5{
 	font-size: 16px;
@@ -113,6 +143,7 @@ $zindex-topnav: 500;
 $zindex-modal: 900;
 
 $side-padding: 40px;
+$side-padding-sm: 20px;
 
 .button{
 	border: 1px solid $btn-dark;
@@ -134,6 +165,7 @@ $side-padding: 40px;
 // ******************
 
 $top-nav-height: 80px;
+$top-nav-height-sm: 60px;
 
 .topnav{
 	width: 100%;
@@ -142,6 +174,9 @@ $top-nav-height: 80px;
 	position: fixed;
 	top: 0px;
 	z-index: $zindex-topnav;
+	@include bp-small {
+		height: $top-nav-height-sm;
+	}
 	.leftdiv{
 		width: 50%;
 		height: inherit;
@@ -150,6 +185,10 @@ $top-nav-height: 80px;
 		h2{
 			margin-left: $side-padding;
 			line-height: $top-nav-height;
+			@include bp-small {
+				margin-left: $side-padding-sm;
+				line-height: $top-nav-height-sm;
+			}
 		}
 	}
 	.rightdiv{
@@ -157,11 +196,11 @@ $top-nav-height: 80px;
 		height: inherit;
 		float: left;
 		background-color: $bg-dark;
+		color: $text-light;
 		nav{
 			float: right;
 			margin-right: $side-padding;
 			a{
-				color: $text-light;
 				font-weight: $font-weight-light;
 				line-height: $top-nav-height;
 				margin-left: 40px;
@@ -196,6 +235,19 @@ $top-nav-height: 80px;
 			// 		bottom: 24px;
 			// 	}
 			// }
+			@include bp-small {
+				display: none;
+			}
+		}
+		h1{
+			line-height: $top-nav-height-sm;
+			text-align: right;
+			padding-right: $side-padding-sm;
+			display: none;
+			display: none;
+			@include bp-small {
+				display: block;
+			}
 		}
 	}
 }
@@ -216,14 +268,25 @@ $top-nav-height: 80px;
 		margin-top: 20vh;
 		font-weight: $font-weight-light;
 		line-height: 1.2;
+		@include bp-small {
+			margin-top: 30vh;
+			line-height: 1.5;
+		}
 	}
 	p{
 		margin-top: 30vh;
 		font-weight: $font-weight-light;
+		padding: 0 30px;
+		@include bp-small {
+			display: none;
+		}
 	}
 	h5{
 		margin-top: 10vh;
 		font-weight: $font-weight-light;
+		@include bp-small {
+			display: none;
+		}
 	}
 	.leftdiv{
 		width: 50%;
@@ -240,13 +303,12 @@ $top-nav-height: 80px;
 		}
 		h1{
 			text-align: right;
-			padding-right: 30px;
+			padding: 0 30px 0 18px;
 			position: relative;
 			z-index: $zindex-about;
 		}
 		p{
 			text-align: right;
-			padding-right: 30px;
 		}
 		h5{
 			text-align: right;
@@ -273,7 +335,6 @@ $top-nav-height: 80px;
 		}
 		p{
 			text-align: left;
-			padding-left: 30px;
 		}
 		h5{
 			text-align: left;
@@ -299,10 +360,16 @@ $top-nav-height: 80px;
 			height: 300px;
 			color: $text-light;
 			cursor: pointer;
+			@include bp-small {
+				height: 200px;
+			}
 			h4.org{
 				padding: 25px $side-padding;
 				text-align: right;
 				font-weight: $font-weight-normal;
+				@include bp-small {
+					padding: 20px $side-padding-sm;
+				}
 			}
 			h1{
 				padding-top: 0px;
@@ -312,6 +379,9 @@ $top-nav-height: 80px;
 				padding-top: 20px;
 				text-align: center;
 				font-weight: $font-weight-light;
+				@include bp-small{
+					padding-top: 10px;
+				}
 			}
 		}
 		li:nth-child(1){
@@ -337,32 +407,76 @@ $top-nav-height: 80px;
 	@extend %clearfix;
 	position: relative;
 	z-index: $zindex-main;
-	height: 540px;
+	height: 100%;
+	@include bp-small {
+		height: auto;
+	}
 	.leftdiv{
 		width: 37.5%;
-		height: inherit;
+		height: 100%;
+		min-height: 540px;
 		float: left;
 		background: url('../images/avatar.jpg') center center no-repeat;
 		background-size: auto 100%;
+		@include bp-small {
+			display: none;
+		}
+	}
+	.topdiv{
+		display: none;
+		width: 100%;
+		padding: 50px 0;
+		background-color: $bg-light;
+		.wrapper{
+			width: 200px;
+			height: 200px;
+			margin: auto;
+			border-radius: 200px;
+			border: 1px solid #979797;
+		}
+		.avatar{
+			width: 180px;
+			height: 180px;
+			margin: 10px auto;
+			border-radius: 180px;
+			background: url('../images/avatar.jpg') center center no-repeat;
+			background-size: auto 100%;
+		}
+		@include bp-small {
+			display: block;
+		}
 	}
 	.rightdiv{
 		width: 62.5%;
-		height: inherit;
+		height: auto;
+		min-height: 500px;
+		padding-bottom: 40px;
 		float: left;
 		background-color: $bg-light;
 		position: relative;
+		@include bp-small {
+			width: 100%;
+			float: none;
+		}
 		p{
-			width: 80%;
 			max-width: 640px;
 			font-weight: $font-weight-light;
 			line-height: 2;
 			margin: auto;
-			padding-top: 60px;
+			padding: 60px 100px 0;
 			position: relative;
 			&:before{
 				content: url('../images/quote.svg');
 				position: absolute;
-				left: -80px;
+				left: 18px;
+			}
+			@include bp-small {
+				padding: 60px 40px 0;
+				&:before{
+					left: 50%;
+					top: -20px;
+					margin-left: -30px;
+				}
 			}
 		}
 		.resume{
@@ -375,6 +489,7 @@ $top-nav-height: 80px;
 			margin: 10px 0;
 		}
 		h2{
+			padding: 15px 0;
 			font-size: 32px;
 			color: #5A5A5A;
 			text-align: center;

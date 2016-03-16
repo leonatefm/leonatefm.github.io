@@ -5,6 +5,7 @@
 	<meta name="author" content="Chengqi Zhu" />
 	<meta name="keywords" content="Chengqi Zhu, Zhu Chengqi, zhuchengqi, chengqizhu, leonate, 祝成琦, portfolio, UX, design, front end development" />
 	<meta name="description" content="This is the portfolio of Chengqi Zhu about user experience design and front end development.">
+	<meta name="viewport" content="initial-scale=1.0">
 
 	<title>Chengqi Zhu's Portfolio</title>
 	
@@ -29,6 +30,7 @@
 				<a href="#projects">Projects</a>
 				<a href="#contact">Contact</a>
 			</nav>
+			<h1 class="icon ion-navicon"></h1>
 		</div>
 	</header>
 	<section class="about">
@@ -65,7 +67,11 @@
 		</ul>
 	</section>
 	<section class="contact">
-		<div class="leftdiv"></div>
+		<div class="leftdiv">
+		</div>
+		<div class="topdiv">
+			<div class="wrapper"><div class="avatar"></div></div>
+		</div>
 		<div class="rightdiv">
 			<p>By immerging myself into every single stage of creating a product, I have developed rich experience in user needs assessment, prototyping and front-end technology. My greatest advantage is that I have professional knowledge in both design and development which allows me to bridge the communication gap in the team among functional units and lead to excellent products. This is what I can and love to do.</p>
 			<button class="resume button">Check Out My Resume</button>
@@ -79,5 +85,15 @@
 			<h6 class="footer">2016 &copy; Chengqi Zhu</h6>
 		</div>
 	</section>
+
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+	<script>
+		$(document ).ready(function(){
+			$('.contact .leftdiv').height($('.contact .rightdiv').outerHeight());
+			$( window ).resize(function() {
+				$('.contact .leftdiv').height($('.contact .rightdiv').outerHeight());
+			});
+		});
+	</script>
 </body>
 </html>
