@@ -79,6 +79,10 @@ html{
 	color: $text-dark;
 }
 
+body.modal-open{
+	overflow: hidden;
+}
+
 h1{
 	font-size: 56px;
 	margin: 0;
@@ -136,6 +140,7 @@ $zindex-about: 100;
 $zindex-main: 200;
 $zindex-topnav: 500;
 $zindex-modal: 900;
+$zindex-modal-content: 1000;
 
 $side-padding: 40px;
 $side-padding-sm: 20px;
@@ -409,10 +414,87 @@ $top-nav-height-sm: 50px;
 	background-color: $bg-dark;
 	display: none;
 	@include opacity(0);
-	@include transition( all, 0.4s, ease-in-out);
+	@include transition( all, 0.3s, ease-in-out);
 }
 .projects-modal.show{
 	@include opacity(0.7);
+}
+
+.project-detail-list{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	height: 100vh;
+	width: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: $zindex-modal-content;
+	display: none;
+	.project-detail{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: none;
+		.leftdiv{
+			width: 62.5%;
+			height: inherit;
+			overflow: auto;
+			position: absolute;
+			top: 0;
+			left: -62.5%;
+			@include transition( all, 0.6s, ease);
+			ul{
+				list-style-type: none;
+				padding: 60px $side-padding;
+				margin: 0;
+				li{
+					margin: 0 auto 10px;
+					img{
+						width: 100%;
+					}
+				}
+			}
+		}
+		.leftdiv.show{
+			left: 0;
+		}
+		.rightdiv{
+			width: 37.5%;
+			height: inherit;
+			overflow: auto;
+			background-color: $bg-light;
+			position: absolute;
+			top: 0;
+			right: -37.5%;
+			@include transition( all, 0.6s, ease);
+			h2{
+				color: $btn-dark;
+				margin: 60px $side-padding 10px;
+			}
+			h5{
+				margin: 0 $side-padding 30px;
+			}
+			p{
+				margin: 10px $side-padding;
+				font-weight: $font-weight-light;
+				line-height: 2;
+			}
+			span.close-modal{
+				font-size: 56px;
+				color: #979797;
+				position: absolute;
+				top: 0;
+				right: $side-padding;
+				cursor: pointer;
+			}
+		}
+		.rightdiv.show{
+			right: 0;
+		}
+	}
 }
 
 // ******************
