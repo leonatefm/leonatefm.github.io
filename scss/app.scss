@@ -47,24 +47,6 @@ $btn-dark: #121212;
   }
 }
 
-@mixin bp-large {
-  @media only screen and (max-width: 1440px) {
-    @content;
-  }
-}
-
-@mixin bp-medium {
-  @media only screen and (max-width: 1024px) {
-    @content;
-  }
-}
-
-@mixin bp-small {
-  @media only screen and (max-width: 720px) {
-    @content;
-  }
-}
-
 // ******************
 // *** Typography *** 
 // ******************
@@ -144,6 +126,19 @@ $zindex-modal: 900;
 
 $side-padding: 40px;
 $side-padding-sm: 20px;
+
+
+@mixin bp-large {
+  @media only screen and (min-width: 2160px) {
+    @content;
+  }
+}
+
+@mixin bp-small {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
 
 .button{
 	border: 1px solid $btn-dark;
@@ -420,6 +415,9 @@ $top-nav-height-sm: 60px;
 		background-size: auto 100%;
 		@include bp-small {
 			display: none;
+		}
+		@include bp-large {
+			background-size: 100% auto;
 		}
 	}
 	.topdiv{
