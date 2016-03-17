@@ -265,7 +265,7 @@ $top-nav-height-sm: 50px;
 					@include opacity(1);
 					&:before{
 						@include opacity(1);
-						bottom: 24px;
+						bottom: 20px;
 					}
 				}
 			}
@@ -592,13 +592,13 @@ $top-nav-height-sm: 50px;
 		min-height: 540px;
 		float: left;
 		background: url('../images/avatar.jpg') center center no-repeat;
-		background-size: auto 100%;
+		background-size: cover;
 		@include bp-small {
 			display: none;
 		}
-		@include bp-large {
-			background-size: 100% auto;
-		}
+		// @include bp-large {
+		// 	background-size: 100% auto;
+		// }
 	}
 	.topdiv{
 		display: none;

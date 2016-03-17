@@ -1,5 +1,23 @@
 $(document ).ready(function(){
 
+	//Nav link smooth scrolling
+
+	$('.nav-link').on('click', function(event){
+		var hashtag = $(this).attr('href');
+		smoothScroll(hashtag);
+		event.preventDefault();
+	});
+
+	var smoothScroll = function(target){
+		var position = $(target).offset().top - $('.topnav').height();
+		if (target=='#about') {
+			position = 0;
+		}
+		$('html, body').animate({
+			scrollTop: position
+		}, 800);
+	};
+
 	//Align the photo height with the contact contents
 	$('.contact .leftdiv').height($('.contact .rightdiv').outerHeight());
 	$(window).resize(function() {

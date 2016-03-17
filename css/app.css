@@ -543,7 +543,7 @@ a {
           .topnav .rightdiv nav a:hover:before {
             opacity: 1;
             filter: alpha(opacity=100);
-            bottom: 24px; }
+            bottom: 20px; }
       @media only screen and (max-width: 768px) {
         .topnav .rightdiv nav {
           display: none; } }
@@ -808,13 +808,10 @@ a {
     min-height: 540px;
     float: left;
     background: url("../images/avatar.jpg") center center no-repeat;
-    background-size: auto 100%; }
+    background-size: cover; }
     @media only screen and (max-width: 768px) {
       .contact .leftdiv {
         display: none; } }
-    @media only screen and (min-width: 2160px) {
-      .contact .leftdiv {
-        background-size: 100% auto; } }
   .contact .topdiv {
     display: none;
     width: 100%;
