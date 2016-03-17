@@ -17,7 +17,7 @@ $btn-dark: #121212;
 // *** Mixins *** 
 // **************
  
-@mixin box-shadow( $x: 0px, $y: 2px, $blur: 1px, $color: rgba(0,0,0,.15) ) {
+@mixin box-shadow( $x: 0px, $y: 0px, $blur: 3px, $color: rgba(0,0,0,.15) ) {
 	-webkit-box-shadow: $x $y $blur $color;
 	-moz-box-shadow: $x $y $blur $color;
 	box-shadow: $x $y $blur $color;
@@ -60,6 +60,33 @@ $btn-dark: #121212;
   }
 }
 
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }  
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }  
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+
+
 // ******************
 // *** Typography *** 
 // ******************
@@ -79,7 +106,11 @@ html{
 	color: $text-dark;
 }
 
-body.modal-open{
+body{
+	//overflow: auto;
+}
+
+.modal-open{
 	overflow: hidden;
 }
 
@@ -159,6 +190,15 @@ $side-padding-sm: 20px;
 	}
 }
 
+// ********************
+// ***   Animation  *** 
+// ********************
+
+@include keyframes(shine) {
+   0% {color: rgba(255, 255, 255, .8); text-shadow: 0 0px 15px rgba(0, 0, 0, .9);}
+   50% {color: rgba(255, 255, 255, 1); text-shadow: 0 1px 15px rgba(255, 255, 255, .9);}
+   100% {color: rgba(255, 255, 255, .8); text-shadow: 0 0px 15px rgba(0, 0, 0, .9);}
+}
 
 // ******************
 // ***   Global  *** 
@@ -374,13 +414,19 @@ $top-nav-height-sm: 50px;
 			h1{
 				padding-top: 0px;
 				text-align: center;
+				//@include animation('shine 3s ease 4.5s infinite');
 			}
 			h4.role{
 				padding-top: 20px;
 				text-align: center;
 				font-weight: $font-weight-light;
-				@include bp-small{
+				@include bp-small {
 					padding-top: 10px;
+				}
+			}
+			&:hover{
+				h1{
+					@include animation('shine ease 3s infinite');
 				}
 			}
 		}
@@ -457,6 +503,9 @@ $top-nav-height-sm: 50px;
 					}
 				}
 			}
+			@include bp-small {
+				display: none;
+			}
 		}
 		.leftdiv.show{
 			left: 0;
@@ -464,7 +513,7 @@ $top-nav-height-sm: 50px;
 		.rightdiv{
 			width: 37.5%;
 			height: inherit;
-			overflow: auto;
+			overflow: scroll;
 			background-color: $bg-light;
 			position: absolute;
 			top: 0;
@@ -482,6 +531,9 @@ $top-nav-height-sm: 50px;
 				font-weight: $font-weight-light;
 				line-height: 2;
 			}
+			p:first-child{
+				padding-bottom: 60px;
+			}
 			span.close-modal{
 				font-size: 56px;
 				color: #979797;
@@ -490,9 +542,34 @@ $top-nav-height-sm: 50px;
 				right: $side-padding;
 				cursor: pointer;
 			}
+			//For Mobile Image List
+			ul{
+				display: none;
+				list-style-type: none;
+				padding: 40px $side-padding;
+				margin: 0;
+				li{
+					margin: 0 auto 10px;
+					img{
+						width: 100%;
+					}
+					@include box-shadow;
+				}
+			}
+
+			@include bp-small {
+				width: 100%;
+				right: -100%;
+				ul{
+					display: block;
+				}
+			}
 		}
 		.rightdiv.show{
 			right: 0;
+		}
+		.mobile-scrollable{
+			-webkit-overflow-scrolling: touch;
 		}
 	}
 }
