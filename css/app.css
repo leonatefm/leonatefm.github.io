@@ -877,6 +877,7 @@ a {
   .contact .rightdiv {
     width: 62.5%;
     height: auto;
+    text-align: center;
     min-height: 500px;
     padding-bottom: 40px;
     float: left;
@@ -890,6 +891,7 @@ a {
       max-width: 640px;
       font-weight: 300;
       line-height: 2;
+      text-align: left;
       margin: auto;
       padding: 60px 100px 0;
       position: relative; }
@@ -905,22 +907,19 @@ a {
             top: -20px;
             margin-left: -30px; } }
     .contact .rightdiv .resume {
-      display: block;
+      display: inline-block;
       margin: 40px auto; }
     .contact .rightdiv h5 {
-      text-align: center;
       font-weight: 300;
       margin: 10px 0; }
     .contact .rightdiv h2 {
       padding: 15px 0;
       font-size: 32px;
-      color: #5A5A5A;
-      text-align: center; }
+      color: #5A5A5A; }
       .contact .rightdiv h2 a {
         margin: 0 15px; }
     .contact .rightdiv h6 {
       width: 100%;
-      text-align: center;
       position: absolute;
       bottom: 15px; }
 
