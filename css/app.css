@@ -353,12 +353,12 @@ td,
 th {
   padding: 0; }
 
-.topnav, .about, .contact {
+.topnav, .about, .about .left-loop, .about .right-loop, .contact {
   *zoom: 1; }
-  .topnav:before, .about:before, .contact:before, .topnav:after, .about:after, .contact:after {
+  .topnav:before, .about:before, .about .left-loop:before, .about .right-loop:before, .contact:before, .topnav:after, .about:after, .about .left-loop:after, .about .right-loop:after, .contact:after {
     content: " ";
     display: table; }
-  .topnav:after, .about:after, .contact:after {
+  .topnav:after, .about:after, .about .left-loop:after, .about .right-loop:after, .contact:after {
     clear: both; }
 
 html {
@@ -554,7 +554,7 @@ a {
       display: none; }
       @media only screen and (max-width: 768px) {
         .topnav .rightdiv h1 {
-          display: none; } }
+          display: block; } }
 
 .about {
   width: 100%;
@@ -571,10 +571,10 @@ a {
       .about h1 {
         margin-top: 0;
         position: absolute;
-        top: 30%;
+        top: 20%;
         line-height: 1.5; } }
   .about p {
-    margin-top: 30vh;
+    margin-top: 20vh;
     font-weight: 300;
     padding: 0 30px; }
     @media only screen and (max-width: 768px) {
@@ -591,7 +591,9 @@ a {
     height: inherit;
     min-height: 600px;
     float: left;
-    background-color: #FFFFFF; }
+    background-color: #FFFFFF;
+    position: relative;
+    overflow: hidden; }
     .about .leftdiv img {
       height: 100%;
       min-height: 600px;
@@ -614,7 +616,9 @@ a {
     min-height: 600px;
     float: left;
     background-color: #121212;
-    color: #FFFFFF; }
+    color: #FFFFFF;
+    position: relative;
+    overflow: hidden; }
     .about .rightdiv img {
       height: 100%;
       min-height: 600px;
@@ -630,6 +634,42 @@ a {
       text-align: left; }
     .about .rightdiv h5 {
       text-align: left; }
+  .about .left-loop {
+    margin-right: -55px;
+    margin-top: 60px; }
+    @media only screen and (max-width: 768px) {
+      .about .left-loop {
+        margin: 0;
+        position: absolute;
+        right: -55px;
+        top: 60%; } }
+    .about .left-loop svg {
+      float: right; }
+    .about .left-loop path {
+      fill: none;
+      stroke: #121212;
+      stroke-width: 8px; }
+    .about .left-loop circle {
+      fill: #FFFFFF; }
+  .about .right-loop {
+    margin-left: -55px;
+    margin-top: 60px; }
+    @media only screen and (max-width: 768px) {
+      .about .right-loop {
+        margin: 0;
+        position: absolute;
+        left: -55px;
+        top: 60%; } }
+    .about .right-loop svg {
+      float: left; }
+    .about .right-loop path {
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-width: 8px; }
+    .about .right-loop circle {
+      stroke-width: 1px;
+      stroke: #121212;
+      fill: #121212; }
 
 .projects {
   margin-top: 100vh;

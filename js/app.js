@@ -108,4 +108,89 @@ $(document ).ready(function(){
  //    }
 
  //    removeIOSRubberEffect( document.querySelector( ".mobile-scrollable" ) );
+
+
+ 	//Infinite Loop Svg Animation
+	var loopwidth = 110;
+	var loopheight = 50;
+	var points = [
+		[26, 4],
+		[loopwidth-26, loopheight-4],
+		[loopwidth-26, 4],
+		[26, loopheight-4],
+	];
+
+	//leftloop animation
+	var leftloop_svg = d3.select(".left-loop").append("svg")
+		.attr("width", loopwidth)
+		.attr("height", loopheight);
+
+	var leftloop_path = leftloop_svg.append("path")
+		.data([points])
+		.attr("d", d3.svg.line()
+		.tension(0) // Catmull–Rom
+		.interpolate("cardinal-closed"));
+
+	leftloop_svg.selectAll(".point")
+		.data(points)
+		// .enter().append("circle")
+		//   .attr("r", 4)
+		.attr("transform", function(d) { return "translate(" + d + ")"; });
+
+	var leftloop_circle = leftloop_svg.append("circle")
+		.attr("r", 3)
+		.attr("transform", "translate(" + points[0] + ")");
+
+	leftloop_transition();
+
+	function leftloop_transition() {
+		leftloop_circle.transition()
+		.duration(4000)
+		.ease('linear')
+		.attrTween("transform", translateAlong(leftloop_path.node()))
+		.each("end", leftloop_transition);
+	}
+
+	//rightloop animation
+	var rightloop_svg = d3.select(".right-loop").append("svg")
+		.attr("width", loopwidth)
+		.attr("height", loopheight);
+
+	var rightloop_path = rightloop_svg.append("path")
+		.data([points])
+		.attr("d", d3.svg.line()
+		.tension(0) // Catmull–Rom
+		.interpolate("cardinal-closed"));
+
+	rightloop_svg.selectAll(".point")
+		.data(points)
+		// .enter().append("circle")
+		//   .attr("r", 4)
+		.attr("transform", function(d) { return "translate(" + d + ")"; });
+
+	var rightloop_circle = rightloop_svg.append("circle")
+		.attr("r", 3)
+		.attr("transform", "translate(" + points[0] + ")");
+
+	rightloop_transition();
+
+	function rightloop_transition() {
+		rightloop_circle.transition()
+		.duration(4000)
+		.ease('linear')
+		.attrTween("transform", translateAlong(rightloop_path.node()))
+		.each("end", rightloop_transition);
+	}
+
+	// Returns an attrTween for translating along the specified path element.
+	function translateAlong(path) {
+		var l = path.getTotalLength();
+		return function(d, i, a) {
+			return function(t) {
+				var p = path.getPointAtLength(t * l);
+				return "translate(" + p.x + "," + p.y + ")";
+			};
+		};
+	}
+
 });

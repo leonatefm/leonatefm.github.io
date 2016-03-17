@@ -285,7 +285,7 @@ $top-nav-height-sm: 50px;
 			padding-right: $side-padding-sm;
 			display: none;
 			@include bp-small {
-				display: none;
+				display: block;
 			}
 		}
 	}
@@ -310,12 +310,12 @@ $top-nav-height-sm: 50px;
 		@include bp-small {
 			margin-top: 0;
 			position: absolute;
-			top: 30%;
+			top: 20%;
 			line-height: 1.5;
 		}
 	}
 	p{
-		margin-top: 30vh;
+		margin-top: 20vh;
 		font-weight: $font-weight-light;
 		padding: 0 30px;
 		@include bp-small {
@@ -335,6 +335,8 @@ $top-nav-height-sm: 50px;
 		min-height: 600px;
 		float: left;
 		background-color: $bg-light;
+		position: relative;
+		overflow: hidden;
 		img{
 			height: 100%;
 			min-height: 600px;
@@ -362,6 +364,8 @@ $top-nav-height-sm: 50px;
 		float: left;
 		background-color: $bg-dark;
 		color: $text-light;
+		position: relative;
+		overflow: hidden;
 		img{
 			height: 100%;
 			min-height: 600px;
@@ -379,6 +383,54 @@ $top-nav-height-sm: 50px;
 		}
 		h5{
 			text-align: left;
+		}
+	}
+	.left-loop{
+		margin-right: -55px;
+		margin-top: 60px;
+		@extend %clearfix;
+		@include bp-small {
+			margin: 0;
+			position: absolute;
+			right: -55px;
+			top: 60%;
+		}
+		svg{
+			float: right;
+		}
+		path {
+			fill: none;
+			stroke: $bg-dark;
+			stroke-width: 8px;
+		}
+
+		circle {
+			fill: $bg-light;
+		}
+	}
+	.right-loop{
+		margin-left: -55px;
+		margin-top: 60px;
+		@extend %clearfix;
+		@include bp-small {
+			margin: 0;
+			position: absolute;
+			left: -55px;
+			top: 60%;
+		}
+		svg{
+			float: left;
+		}
+		path {
+			fill: none;
+			stroke: $bg-light;
+			stroke-width: 8px;
+		}
+
+		circle {
+			stroke-width: 1px;
+			stroke:$bg-dark;
+			fill: $bg-dark;
 		}
 	}
 }
