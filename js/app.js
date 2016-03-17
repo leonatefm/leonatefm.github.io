@@ -65,6 +65,13 @@ $(document ).ready(function(){
 		};
 	});
 
+	//Mobile Device Optimization 
+	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+	if (isMobile) {
+		//Avoid screen jumping by replace vh height with static height (100% of device height)
+		$('#about').height(window.screen.height);
+	}
+
 	// //iOS Overlay Scroll Bug fixing
 	// document.ontouchmove = function ( event ) {
 

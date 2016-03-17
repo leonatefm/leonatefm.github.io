@@ -284,9 +284,8 @@ $top-nav-height-sm: 50px;
 			text-align: right;
 			padding-right: $side-padding-sm;
 			display: none;
-			display: none;
 			@include bp-small {
-				display: block;
+				display: none;
 			}
 		}
 	}
@@ -309,7 +308,9 @@ $top-nav-height-sm: 50px;
 		font-weight: $font-weight-light;
 		line-height: 1.2;
 		@include bp-small {
-			margin-top: 30vh;
+			margin-top: 0;
+			position: absolute;
+			top: 30%;
 			line-height: 1.5;
 		}
 	}
@@ -390,7 +391,6 @@ $top-nav-height-sm: 50px;
 	margin-top: 100vh;
 	position: relative;
 	z-index: $zindex-main;
-
 	ul.projects-list{
 		list-style-type: none;
 		margin:0;
