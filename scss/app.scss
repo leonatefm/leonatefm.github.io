@@ -620,6 +620,9 @@ $top-nav-height-sm: 50px;
 				top: 0;
 				right: $side-padding;
 				cursor: pointer;
+				&:hover{
+					color: $text-dark;
+				}
 			}
 			//For Mobile Image List
 			ul{
@@ -647,9 +650,9 @@ $top-nav-height-sm: 50px;
 		.rightdiv.show{
 			right: 0;
 		}
-		.mobile-scrollable{
-			-webkit-overflow-scrolling: touch;
-		}
+		// .mobile-scrollable{
+		// 	-webkit-overflow-scrolling: touch;
+		// }
 	}
 }
 
