@@ -878,6 +878,8 @@ a.textlink {
             text-align: center; } }
     .project-detail-list .project-detail .rightdiv.show {
       right: 0; }
+    .project-detail-list .project-detail .mobile-scrollable {
+      -webkit-overflow-scrolling: touch; }
 
 .contact {
   position: relative;

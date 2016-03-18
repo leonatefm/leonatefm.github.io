@@ -671,9 +671,9 @@ $top-nav-height-sm: 50px;
 		.rightdiv.show{
 			right: 0;
 		}
-		// .mobile-scrollable{
-		// 	-webkit-overflow-scrolling: touch;
-		// }
+		.mobile-scrollable{
+			-webkit-overflow-scrolling: touch;
+		}
 	}
 }
 
