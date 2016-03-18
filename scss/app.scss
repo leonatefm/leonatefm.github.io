@@ -206,10 +206,21 @@ $side-padding-sm: 20px;
 	padding: 0 50px;
 	background-color: transparent;
 	outline: none;
+	position: relative;
 	@include transition( all, 0.3s, ease-in-out);
 	&:hover{
 		background-color: $btn-dark;
 		color: $text-light;
+	}
+}
+.button.appstore{
+	padding: 0 40px 0 70px;
+	span.icon{
+		font-size: 32px;
+		margin: 0 8px;
+		position: absolute;
+		top: 0;
+		left: 30px;
 	}
 }
 
@@ -613,6 +624,13 @@ $top-nav-height-sm: 50px;
 			p:first-child{
 				padding-bottom: 60px;
 			}
+			p.button-link{
+				padding: 20px 0;
+				text-align: left;
+			}
+			a.button{
+				display: inline-block;
+			}
 			span.close-modal{
 				font-size: 56px;
 				color: #979797;
@@ -644,6 +662,9 @@ $top-nav-height-sm: 50px;
 				right: -100%;
 				ul{
 					display: block;
+				}
+				p.button-link{
+					text-align: center;
 				}
 			}
 		}

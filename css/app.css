@@ -445,6 +445,7 @@ a.textlink {
   padding: 0 50px;
   background-color: transparent;
   outline: none;
+  position: relative;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -452,6 +453,15 @@ a.textlink {
   .button:hover {
     background-color: #121212;
     color: #FFFFFF; }
+
+.button.appstore {
+  padding: 0 40px 0 70px; }
+  .button.appstore span.icon {
+    font-size: 32px;
+    margin: 0 8px;
+    position: absolute;
+    top: 0;
+    left: 30px; }
 
 @-webkit-keyframes shine {
   0% {
@@ -832,6 +842,11 @@ a.textlink {
         line-height: 2; }
       .project-detail-list .project-detail .rightdiv p:first-child {
         padding-bottom: 60px; }
+      .project-detail-list .project-detail .rightdiv p.button-link {
+        padding: 20px 0;
+        text-align: left; }
+      .project-detail-list .project-detail .rightdiv a.button {
+        display: inline-block; }
       .project-detail-list .project-detail .rightdiv span.close-modal {
         font-size: 56px;
         color: #979797;
@@ -858,7 +873,9 @@ a.textlink {
           width: 100%;
           right: -100%; }
           .project-detail-list .project-detail .rightdiv ul {
-            display: block; } }
+            display: block; }
+          .project-detail-list .project-detail .rightdiv p.button-link {
+            text-align: center; } }
     .project-detail-list .project-detail .rightdiv.show {
       right: 0; }
 
