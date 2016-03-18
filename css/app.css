@@ -798,9 +798,12 @@ a.textlink {
         padding: 60px 40px;
         margin: 0; }
         .project-detail-list .project-detail .leftdiv ul li {
-          margin: 0 auto 10px; }
+          margin: 0 auto 10px;
+          text-align: center; }
           .project-detail-list .project-detail .leftdiv ul li img {
             width: 100%; }
+          .project-detail-list .project-detail .leftdiv ul li img.vertical {
+            width: 50%; }
       @media only screen and (max-width: 768px) {
         .project-detail-list .project-detail .leftdiv {
           display: none; } }

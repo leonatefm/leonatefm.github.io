@@ -573,8 +573,12 @@ $top-nav-height-sm: 50px;
 				margin: 0;
 				li{
 					margin: 0 auto 10px;
+					text-align: center;
 					img{
 						width: 100%;
+					}
+					img.vertical{
+						width: 50%;
 					}
 				}
 			}
