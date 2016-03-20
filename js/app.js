@@ -39,6 +39,15 @@ $(document ).ready(function(){
 				});
 			})
 		});
+
+		//send GA event tracking
+		var project = $(this).attr('data-project');
+		ga('send', {
+		  hitType: 'event',
+		  eventCategory: 'Projects',
+		  eventAction: 'click',
+		  eventLabel: project
+		});
 	});
 
 	//Define Modal Dismiss Function
