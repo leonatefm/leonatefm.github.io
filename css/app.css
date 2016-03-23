@@ -353,12 +353,12 @@ td,
 th {
   padding: 0; }
 
-.topnav, .about, .about .left-loop, .about .right-loop, .contact {
+.topnav, .about, .about .left-loop, .about .right-loop, .profile {
   *zoom: 1; }
-  .topnav:before, .about:before, .about .left-loop:before, .about .right-loop:before, .contact:before, .topnav:after, .about:after, .about .left-loop:after, .about .right-loop:after, .contact:after {
+  .topnav:before, .about:before, .about .left-loop:before, .about .right-loop:before, .profile:before, .topnav:after, .about:after, .about .left-loop:after, .about .right-loop:after, .profile:after {
     content: " ";
     display: table; }
-  .topnav:after, .about:after, .about .left-loop:after, .about .right-loop:after, .contact:after {
+  .topnav:after, .about:after, .about .left-loop:after, .about .right-loop:after, .profile:after {
     clear: both; }
 
 html {
@@ -881,14 +881,14 @@ a.textlink {
     .project-detail-list .project-detail .mobile-scrollable {
       -webkit-overflow-scrolling: touch; }
 
-.contact {
+.profile {
   position: relative;
   z-index: 200;
   height: 100%; }
   @media only screen and (max-width: 768px) {
-    .contact {
+    .profile {
       height: auto; } }
-  .contact .leftdiv {
+  .profile .leftdiv {
     width: 37.5%;
     height: 100%;
     min-height: 540px;
@@ -896,20 +896,20 @@ a.textlink {
     background: url("../images/avatar.jpg") center center no-repeat;
     background-size: cover; }
     @media only screen and (max-width: 768px) {
-      .contact .leftdiv {
+      .profile .leftdiv {
         display: none; } }
-  .contact .topdiv {
+  .profile .topdiv {
     display: none;
     width: 100%;
     padding: 50px 0;
     background-color: #FFFFFF; }
-    .contact .topdiv .wrapper {
+    .profile .topdiv .wrapper {
       width: 200px;
       height: 200px;
       margin: auto;
       border-radius: 200px;
       border: 1px solid #979797; }
-    .contact .topdiv .avatar {
+    .profile .topdiv .avatar {
       width: 180px;
       height: 180px;
       margin: 10px auto;
@@ -917,9 +917,9 @@ a.textlink {
       background: url("../images/avatar.jpg") center center no-repeat;
       background-size: auto 100%; }
     @media only screen and (max-width: 768px) {
-      .contact .topdiv {
+      .profile .topdiv {
         display: block; } }
-  .contact .rightdiv {
+  .profile .rightdiv {
     width: 62.5%;
     height: auto;
     text-align: center;
@@ -929,10 +929,10 @@ a.textlink {
     background-color: #FFFFFF;
     position: relative; }
     @media only screen and (max-width: 768px) {
-      .contact .rightdiv {
+      .profile .rightdiv {
         width: 100%;
         float: none; } }
-    .contact .rightdiv p {
+    .profile .rightdiv p {
       max-width: 640px;
       font-weight: 300;
       line-height: 2;
@@ -940,32 +940,32 @@ a.textlink {
       margin: auto;
       padding: 60px 100px 0;
       position: relative; }
-      .contact .rightdiv p:before {
+      .profile .rightdiv p:before {
         content: url("../images/quote.svg");
         position: absolute;
         left: 18px; }
       @media only screen and (max-width: 768px) {
-        .contact .rightdiv p {
+        .profile .rightdiv p {
           padding: 60px 40px 0; }
-          .contact .rightdiv p:before {
+          .profile .rightdiv p:before {
             left: 50%;
             top: -20px;
             margin-left: -30px; } }
-    .contact .rightdiv .resume {
+    .profile .rightdiv .resume {
       display: inline-block;
       margin: 40px auto; }
-    .contact .rightdiv h5 {
+    .profile .rightdiv h5 {
       font-weight: 300;
       margin: 10px 0; }
-    .contact .rightdiv h2 {
+    .profile .rightdiv h2 {
       padding: 15px 0;
       font-size: 32px;
       color: #5A5A5A; }
-      .contact .rightdiv h2 a {
+      .profile .rightdiv h2 a {
         margin: 0 15px; }
-        .contact .rightdiv h2 a:hover {
+        .profile .rightdiv h2 a:hover {
           color: #121212; }
-    .contact .rightdiv h6 {
+    .profile .rightdiv h6 {
       width: 100%;
       position: absolute;
       bottom: 15px; }

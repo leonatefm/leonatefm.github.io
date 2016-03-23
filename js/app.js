@@ -18,10 +18,10 @@ $(document ).ready(function(){
 		}, 800);
 	};
 
-	//Align the photo height with the contact contents
-	$('.contact .leftdiv').height($('.contact .rightdiv').outerHeight());
+	//Align the photo height with the profile contents
+	$('.profile .leftdiv').height($('.profile .rightdiv').outerHeight());
 	$(window).resize(function() {
-		$('.contact .leftdiv').height($('.contact .rightdiv').outerHeight());
+		$('.profile .leftdiv').height($('.profile .rightdiv').outerHeight());
 	});
 
 	//Click on project to open details modal

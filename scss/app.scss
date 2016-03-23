@@ -678,10 +678,10 @@ $top-nav-height-sm: 50px;
 }
 
 // ******************
-// ***  Contact   *** 
+// ***  Profile   *** 
 // ******************
 
-.contact{
+.profile{
 	@extend %clearfix;
 	position: relative;
 	z-index: $zindex-main;
