@@ -55,6 +55,8 @@ $(document ).ready(function(){
 		$('.project-detail .leftdiv, .project-detail .rightdiv').removeClass('show');
 		window.setTimeout(function(){
 			$('.projects-modal').removeClass('show');
+			//return the scroll bar to the top everytime dismissing a modal
+			$('.project-detail .leftdiv').scrollTop(0);
 		}, 600);
 		window.setTimeout(function(){
 			$('.project-detail, .project-detail-list, .projects-modal').hide();
