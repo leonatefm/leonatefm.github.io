@@ -182,6 +182,12 @@ a.textlink{
 			bottom: 2px;
 		}
 	}
+	@include bp-small {
+		&:before{
+			@include opacity(1);
+			bottom: 2px;
+		}
+	}
 }
 
 // ******************
@@ -312,13 +318,14 @@ $top-nav-height-sm: 50px;
 				display: none;
 			}
 		}
-		h1{
+		a.icon{
+			font-size: 32px;
 			line-height: $top-nav-height-sm;
-			text-align: right;
-			padding-right: $side-padding-sm;
+			float: right;
+			padding: 0 $side-padding-sm;
 			display: none;
 			@include bp-small {
-				display: block;
+				display: inline-block;
 			}
 		}
 	}
@@ -767,7 +774,6 @@ $top-nav-height-sm: 50px;
 		}
 		h5{
 			font-weight: $font-weight-light;
-
 			margin: 10px 0;
 		}
 		h2{
