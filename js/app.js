@@ -10,7 +10,7 @@ $(document ).ready(function(){
 
 	var smoothScroll = function(target){
 		var position = $(target).offset().top - $('.topnav').height();
-		if (target=='#about') {
+		if (target=='#home') {
 			position = 0;
 		}
 		$('html, body').animate({
@@ -18,10 +18,10 @@ $(document ).ready(function(){
 		}, 800);
 	};
 
-	//Align the photo height with the profile contents
-	$('.profile .leftdiv').height($('.profile .rightdiv').outerHeight());
+	//Align the photo height with the about contents
+	$('.about .leftdiv').height($('.about .rightdiv').outerHeight());
 	$(window).resize(function() {
-		$('.profile .leftdiv').height($('.profile .rightdiv').outerHeight());
+		$('.about .leftdiv').height($('.about .rightdiv').outerHeight());
 	});
 
 	//Click on project to open details modal
@@ -80,7 +80,7 @@ $(document ).ready(function(){
 	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 	if (isMobile) {
 		//Avoid screen jumping by replace vh height with static height (100% of device height)
-		$('#about').height(window.screen.height);
+		$('#home').height(window.screen.height);
 	}
 
 	// //iOS Overlay Scroll Bug fixing
