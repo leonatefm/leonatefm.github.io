@@ -261,11 +261,24 @@ $top-nav-height-sm: 50px;
 		height: inherit;
 		float: left;
 		background-color: $bg-light;
-		h3{
-			margin-left: $side-padding;
-			line-height: $top-nav-height;
+		display: flex;
+		align-items: center;
+		.logo{
+			width: 36px;
+			height: 36px; 
+			display: inline-block;
+			margin: 0 15px 0 $side-padding;
+			fill: $bg-dark;
 			@include bp-small {
-				margin-left: $side-padding-sm;
+				width: 24px;
+				height: 24px;
+				margin: 0 10px 0 $side-padding-sm;
+			}
+		}
+		h3{
+			line-height: $top-nav-height;
+			display: inline-block;
+			@include bp-small {
 				line-height: $top-nav-height-sm;
 			}
 		}
