@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="60px" height="48px" viewBox="0 0 60 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>left-quote</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Tablet-Portrait" transform="translate(-163.000000, -1461.000000)" fill="#444444">
+            <g id="left-quote" transform="translate(163.000000, 1461.000000)">
+                <g id="Group">
+                    <path d="M26.25,20.7485276 L26.25,47.0886076 L0,47.0886076 L0,20.3722408 C0,2.31047163 16.875,0.0527504939 16.875,0.0527504939 L19.125,5.32076649 C19.125,5.32076649 11.625,6.44962706 10.125,12.4702168 C8.625,16.9856591 11.625,20.7485276 11.625,20.7485276 L26.25,20.7485276 L26.25,20.7485276 Z" id="Shape"></path>
+                    <path d="M60,20.7485276 L60,47.0886076 L33.75,47.0886076 L33.75,20.3722408 C33.75,2.31047163 50.625,0.0527504939 50.625,0.0527504939 L52.875,5.32076649 C52.875,5.32076649 45.375,6.44962706 43.875,12.4702168 C42.375,16.9856591 45.375,20.7485276 45.375,20.7485276 L60,20.7485276 L60,20.7485276 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,7 +1,5 @@
 @charset "utf-8";
 
-@import "normalize";
-
 // ***********************
 // *** Color Variables *** 
 // ***********************
@@ -278,6 +276,9 @@ $top-nav-height-sm: 50px;
 		h3{
 			line-height: $top-nav-height;
 			display: inline-block;
+			span{
+				font-weight: $font-weight-light;
+			}
 			@include bp-small {
 				line-height: $top-nav-height-sm;
 			}
