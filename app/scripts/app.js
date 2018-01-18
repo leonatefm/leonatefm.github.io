@@ -827,7 +827,7 @@ References:
 		});
 	
 		var smoothScroll = function(target){
-			var position = $(target).offset().top - $('.topnav').height();
+			var position = $(target).offset().top;
 			if (target=='#home') {
 				position = 0;
 			}
