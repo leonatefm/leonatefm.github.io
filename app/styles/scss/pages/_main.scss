@@ -117,7 +117,7 @@ $font-weight-bold: 700;
 html{
 	font-family: 'Helvetica Neue', Helvetica, Arial, Roboto, sans-serif;
 	font-size: $base-font-size;
-	line-height: 1.5;
+	line-height: $base-line-height;
 	letter-spacing: 0.3px;
 	color: $text-dark;
 	@include bp-small{
@@ -361,7 +361,7 @@ $top-nav-height-sm: 50px;
 			a{
 				font-weight: $font-weight-light;
 				line-height: $top-nav-height;
-				margin-left: 40px;
+				margin-left: 30px;
 				display: inline-block;
 				overflow: hidden;
 				position: relative;
@@ -759,6 +759,74 @@ $top-nav-height-sm: 50px;
 	}
 }
 
+
+// *********************
+// ***  Photograph   *** 
+// *********************
+
+.photograph{
+	position: relative;
+	z-index: $zindex-main;
+	.gallery{
+		width: 100%;
+		padding: 0 $side-padding;
+		column-count: 3;
+		column-gap: $side-padding;
+		figure{
+			break-inside: avoid;
+			margin: 0;
+			img{
+				width: 100%;
+			}
+			figcaption{
+				text-align: center;
+				padding: 10px 0 30px;
+				h5{
+					font-size: 1em;
+				}
+				h6{
+					font-size: 0.75em;
+					color: $text-gray;
+					font-style: italic;
+					font-weight: $font-weight-light;
+				}
+			}
+		}
+		@include bp-small{
+			column-count: 2;
+			figure{
+				&:last-child{
+					display: none;
+				}
+			}
+		}
+		@include bp-ex-small{
+			padding: 0 $side-padding-sm;
+			column-gap: $side-padding-sm;
+		}
+	}
+	.see-more{
+		text-align: center;
+		margin: 0;
+		a{
+			font-size: 14px;
+			font-weight: $font-weight-light;
+			display: inline-block;
+			position: relative;
+			&:after{
+				content: "";
+				width: 100%;
+				height: 1px;
+				background-color: $text-dark;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+			}
+		}
+	}
+}
+
+
 // ******************
 // ***  About   *** 
 // ******************
@@ -880,7 +948,7 @@ $top-nav-height-sm: 50px;
 		h2{
 			padding: 15px 0;
 			font-size: 32px;
-			color: #5A5A5A;
+			color: $text-gray;
 			a{
 				margin: 0 15px;
 				&:hover{
