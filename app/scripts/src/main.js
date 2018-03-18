@@ -21,6 +21,78 @@
 				scrollTop: position
 			}, 800);
 		};
+
+
+		// *************************
+		// ***  Project Section  *** 
+		// *************************
+
+		//Click on project to expand the full page
+		$('.project-page').on('click', function(){
+
+			//Return if the page is already expanded
+			if($(this).hasClass('open')) return false;
+
+			//Initialize project page if it is collapsed
+			var projectElem = this,
+				projectName = $(projectElem).attr('data-project'),
+				currentPosition = $(document).scrollTop(),
+				projectPosition = $(projectElem).offset().top;
+
+			console.log(projectElem);
+
+			//Send GA event tracking
+			ga('send', {
+				hitType: 'event',
+				eventCategory: 'Projects',
+				eventAction: 'click',
+				eventLabel: projectName
+			});
+
+			//Lock background document scroll
+			bodyScrollLock.disableBodyScroll(projectElem);
+
+			//Expand project page
+			$('html, body').animate({
+				scrollTop: projectPosition
+			}, 300, 'swing');
+			$(projectElem).addClass('open');
+
+			//Initialize Slick slider config
+			var defaultSlickOption = {
+				arrows: false,
+				dots: true,
+				autoplay: true,
+				autoplaySpeed: 2000,
+				speed: 500
+			};
+			$(projectElem).find('.slider-contents').slick(defaultSlickOption);
+
+			//Attach Dismiss Event
+			var collapsePage = function(event){
+				//Destroy Slick slider
+				$(projectElem).find('.slider-contents').slick('unslick');
+				//Scroll page back to the previous position
+				$('html, body').animate({
+					scrollTop: currentPosition
+				}, 300, 'swing');
+				//Unlock background document scroll
+				bodyScrollLock.enableBodyScroll(projectElem);
+				$(projectElem).removeClass('open');
+
+				if (event&&event.stopPropagation) event.stopPropagation();
+			};
+
+			$(projectElem).find('.close-page').one('click', collapsePage);
+			$(window).one('keyup', function(event){
+				if (event.keyCode&&event.keyCode == 27) collapsePage();
+			});
+		});
+		
+
+		// ***********************
+		// ***  About Section  *** 
+		// ***********************
 	
 		//Align the photo height with the about contents
 		$('.about .leftdiv').height($('.about .rightdiv').outerHeight());
@@ -28,58 +100,12 @@
 			$('.about .leftdiv').height($('.about .rightdiv').outerHeight());
 		});
 	
-		//Click on project to open details modal
-		$('.projects-list li').on('click', function(){
-			var index = $(this).index();
-			//show project modal
-			$('.projects-modal').show(0, function(){
-				$('.projects-modal').addClass('show');
-				$('.project-detail-list').show(0, function(){
-					$('.project-detail').eq(index).show(0, function(){
-						window.setTimeout(function(){
-							$('.project-detail').eq(index).find('.leftdiv, .rightdiv').addClass('show');
-							$('html, body').addClass('modal-open');
-						}, 500);
-					});
-				})
-			});
-	
-			//send GA event tracking
-			var project = $(this).attr('data-project');
-			ga('send', {
-			  hitType: 'event',
-			  eventCategory: 'Projects',
-			  eventAction: 'click',
-			  eventLabel: project
-			});
-		});
-	
-		//Define Modal Dismiss Function
-		var dismissModal = function (){
-			$('.project-detail .leftdiv, .project-detail .rightdiv').removeClass('show');
-			window.setTimeout(function(){
-				$('.projects-modal').removeClass('show');
-				//return the scroll bar to the top everytime dismissing a modal
-				$('.project-detail .leftdiv').scrollTop(0);
-			}, 600);
-			window.setTimeout(function(){
-				$('.project-detail, .project-detail-list, .projects-modal').hide();
-			}, 900);
-			$('html, body').removeClass('modal-open');
-		};
-	
-		//Click close icon to dismiss modal
-		$('.close-modal').on('click', function(){
-			dismissModal();
-		});
-		//Use Escape key to dismiss modal
-		$(window).keyup(function(evt) {
-			switch( evt.keyCode ) {
-				case 27:			
-					dismissModal();
-			};
-		});
-	
+
+		// **********************
+		// ***  Home Section  *** 
+		// **********************
+
+
 		//Mobile Device Optimization 
 		var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 		if (isMobile) {
@@ -87,45 +113,7 @@
 			$('#home').height(window.screen.height);
 		}
 	
-		// //iOS Overlay Scroll Bug fixing
-		// document.ontouchmove = function ( event ) {
-	
-	 //        var isTouchMoveAllowed = true, target = event.target;
-	
-	 //        while ( target !== null ) {
-	 //            if ( target.classList && target.classList.contains( 'modal-open' ) ) {
-	 //                isTouchMoveAllowed = false;
-	 //                break;
-	 //            }
-	 //            target = target.parentNode;
-	 //        }
-	
-	 //        if ( !isTouchMoveAllowed ) {
-	 //            event.preventDefault();
-	 //        }
-	
-	 //    };
-	
-	 //    function removeIOSRubberEffect( element ) {
-	
-	 //        element.addEventListener( "touchstart", function () {
-	
-	 //            var top = element.scrollTop, totalScroll = element.scrollHeight, currentScroll = top + element.offsetHeight;
-	
-	 //            if ( top === 0 ) {
-	 //                element.scrollTop = 1;
-	 //            } else if ( currentScroll === totalScroll ) {
-	 //                element.scrollTop = top - 1;
-	 //            }
-	
-	 //        } );
-	
-	 //    }
-	
-	 //    removeIOSRubberEffect( document.querySelector( ".mobile-scrollable" ) );
-	
-	
-		 //Infinite Loop Svg Animation
+		//Infinite Loop Svg Animation
 		var loopwidth = 110;
 		var loopheight = 50;
 		var points = [
@@ -211,8 +199,3 @@
 	});
   
   })(jQuery, window, document);
-
-
-
-
-
