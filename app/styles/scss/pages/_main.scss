@@ -21,11 +21,11 @@ $btn-dark: #121212;
 	box-shadow: $x $y $blur $color;
 }
  
-@mixin transition( $property: all, $duration: 1s, $easing: ease ) {
-	-webkit-transition: $property $duration $easing;
-	-moz-transition: $property $duration $easing;
-	-o-transition: $property $duration $easing;
-	transition: $property $duration $easing;
+@mixin transition( $property: all, $duration: 1s, $easing: ease, $delay: 0s) {
+	-webkit-transition: $property $duration $easing $delay;
+	-moz-transition: $property $duration $easing $delay;
+	-o-transition: $property $duration $easing $delay;
+	transition: $property $duration $easing $delay;
 }
 
 @mixin opacity($opacity) {
@@ -122,6 +122,7 @@ html{
 	color: $text-dark;
 	@include bp-small{
 		font-size: $base-font-size-sm;
+		letter-spacing: 0.2px;
 	}
 }
 
@@ -419,7 +420,9 @@ $top-nav-height-sm: 50px;
 	height: calc(100vh - #{$top-nav-height});
 	min-height: 600px;
 	@extend %clearfix;
-	top: 0px;
+	@include bp-small{
+		height: calc(100vh - #{$top-nav-height-sm});
+	}
 	h1{
 		margin-top: 20vh;
 		font-weight: $font-weight-light;
@@ -586,9 +589,16 @@ $top-nav-height-sm: 50px;
 		.header-nav{
 			width: 100%;
 			height: $top-nav-height;
-			display: none;
+			display: flex;
 			align-items: center;
 			position: relative;
+			transform: translateY(-#{$top-nav-height});
+			@include opacity(0);
+			@include transition( all, 0.4s, ease-in-out, 0.1s);
+			@include bp-small {
+				height: $top-nav-height-sm;
+				transform: translateY(-#{$top-nav-height-sm});
+			}
 			.logo{
 				width: 36px;
 				height: 36px; 
@@ -619,13 +629,11 @@ $top-nav-height-sm: 50px;
 				line-height: 70px;
 				position: absolute;
 				right: $side-padding;
-				@include opacity(0.8);
-				@include transition( all, 0.3s, ease-in-out);
 				&:hover{
-					@include opacity(1);
+					@include animation('shine ease 3s infinite');
 				}
 				@include bp-small{
-					font-size: 48px;
+					font-size: 44px;
 					right: $side-padding-sm;
 				}
 			}
@@ -634,8 +642,12 @@ $top-nav-height-sm: 50px;
 			color: $text-light;
 			cursor: pointer;
 			height: 300px;
+			transform: translateY(-#{$top-nav-height});
+			@include opacity(1);
+			@include transition( all, 0.4s, ease-in-out, 0.1s);
 			@include bp-small{
 				height: 200px;
+				transform: translateY(-#{$top-nav-height-sm});
 			}
 			h4.org{
 				padding: 25px $side-padding;
@@ -648,7 +660,6 @@ $top-nav-height-sm: 50px;
 			h1{
 				padding-top: 0px;
 				text-align: center;
-				//@include animation('shine 3s ease 4.5s infinite');
 			}
 			h4.role{
 				padding-top: 20px;
@@ -667,6 +678,12 @@ $top-nav-height-sm: 50px;
 	}
 
 	.project-content{
+		transform: translateY(#{$top-nav-height});
+		@include opacity(0);
+		@include transition( all, 0.4s, ease-in-out, 0.1s);
+		@include bp-small{
+			transform: translateY(#{$top-nav-height-sm});
+		}
 		h1{
 			text-align: center;
 			margin-top: 80px;
@@ -707,6 +724,9 @@ $top-nav-height-sm: 50px;
 				width:80%;
 				margin: auto;
 				padding: 20px 0;
+				@include bp-ex-small{
+					width: 100%;
+				}
 				.video-wrapper{
 					width: 100%;
 					position: relative;
@@ -738,10 +758,19 @@ $top-nav-height-sm: 50px;
 					width: 50%;
 					padding: 1rem;
 				}
+				@include bp-ex-small{
+					margin: -0.5rem;
+					img{
+						padding: 0.5rem;
+					}
+				}
 			}
 			.multimedia-slider{
 				width: 80%;
 				margin: auto;
+				@include bp-ex-small{
+					width: 100%;
+				}
 				.slider-contents{
 					&>img{
 						width: 100%;
@@ -829,6 +858,10 @@ $top-nav-height-sm: 50px;
 				margin: auto;
 				border-left: 8px solid #4A90E2;
 				padding: 10px 40px;
+				@include bp-ex-small{
+					width: 100%;
+					padding: 10px 20px;
+				}
 				p{
 					margin: 0;
 				}
@@ -857,17 +890,22 @@ $top-nav-height-sm: 50px;
 	height: 100vh;
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
-	top: 0;
-	left:0;
 	z-index: $zindex-modal;
 	.project-header{
 		.header-nav{
-			display: flex;
+			//display: flex;
+			@include opacity(1);
+			transform: translateY(0);
 		}
 		.header-content{
 			//display: none;
 			@include opacity(0);
+			transform: translateY(0);
 		}
+	}
+	.project-content{
+		@include opacity(1);
+		transform: translateY(0);
 	}
 }
 

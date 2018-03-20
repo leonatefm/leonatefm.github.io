@@ -986,8 +986,6 @@ var bodyScrollLock = (function () {
 				currentPosition = $(document).scrollTop(),
 				projectPosition = $(projectElem).offset().top;
 
-			console.log(projectElem);
-
 			//Send GA event tracking
 			ga('send', {
 				hitType: 'event',
@@ -1054,11 +1052,11 @@ var bodyScrollLock = (function () {
 
 
 		//Mobile Device Optimization 
-		var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-		if (isMobile) {
-			//Avoid screen jumping by replace vh height with static height (100% of device height)
-			$('#home').height(window.screen.height);
-		}
+		// var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+		// if (isMobile) {
+		// 	//Avoid screen jumping by replace vh height with static height (100% of device height)
+		// 	$('#home').height(window.screen.height);
+		// }
 	
 		//Infinite Loop Svg Animation
 		var loopwidth = 110;
