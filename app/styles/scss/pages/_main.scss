@@ -220,6 +220,7 @@ $zindex-main: 200;
 $zindex-topnav: 500;
 $zindex-modal: 900;
 $zindex-modal-content: 1000;
+$zindex-modal-nav: 1100;
 
 $side-padding: 40px;
 $side-padding-sm: 24px;
@@ -577,7 +578,7 @@ $top-nav-height-sm: 50px;
 	background-color: white;
 	position: relative;
 	top: 0;
-	@include transition( all, 0.3s, ease-in-out);
+	@include transition( all, 0.4s, ease-in-out, 0.1s);
 	@include bp-small{
 		height: 200px;
 	}
@@ -592,9 +593,11 @@ $top-nav-height-sm: 50px;
 			display: flex;
 			align-items: center;
 			position: relative;
+			top: 0;
 			transform: translateY(-#{$top-nav-height});
 			@include opacity(0);
-			@include transition( all, 0.4s, ease-in-out, 0.1s);
+			//@include transition( transform, 0.4s, ease-in-out, 0.1s);
+			transition: transform 0.4s ease-in-out 0.1s, opacity 0.4s ease-in-out 0.1s;
 			@include bp-small {
 				height: $top-nav-height-sm;
 				transform: translateY(-#{$top-nav-height-sm});
@@ -629,13 +632,34 @@ $top-nav-height-sm: 50px;
 				line-height: 70px;
 				position: absolute;
 				right: $side-padding;
-				&:hover{
-					@include animation('shine ease 3s infinite');
-				}
 				@include bp-small{
 					font-size: 44px;
 					right: $side-padding-sm;
 				}
+			}
+		}
+		.header-nav.sticky-nav{
+			position: fixed;
+			z-index: $zindex-modal-nav;
+			top: -$top-nav-height;
+			background-color: rgba(255, 255, 255, .9);
+			box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.1);
+			.logo{
+				fill: $text-dark;
+			}
+			h3{
+				color: $text-dark;
+			}
+			span.close-page{
+				color: $text-dark;
+			}
+			&.up{
+				top: -$top-nav-height;
+				@include transition( top, 0.2s, ease-in-out);
+			}
+			&.down{
+				top: 0;
+				@include transition( top, 0.2s, ease-in-out);
 			}
 		}
 		.header-content{
@@ -686,7 +710,7 @@ $top-nav-height-sm: 50px;
 		}
 		h1{
 			text-align: center;
-			margin-top: 80px;
+			padding-top: 80px;
 		}
 		h3.subtitle{
 			font-weight: $font-weight-light;

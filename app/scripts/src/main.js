@@ -66,10 +66,71 @@
 			};
 			$(projectElem).find('.slider-contents').slick(defaultSlickOption);
 
+			//Tracking Scroll Event to turn on/off sticky nav
+			var didScroll,
+				lastScrollTop = 0,
+				delta = 10,
+				navElem = $(projectElem).find('.header-nav')[0],
+				navHeight = $(navElem).height(),
+				headerHeight = $(projectElem).find('.project-header').height();
+
+			$(projectElem).on('scroll', function(){
+				didScroll = true;
+			});
+
+			//Check scroll position to turn on/off sticky nav
+			var checkNavbar = function(){
+
+				//Record the current scroll position
+				var currentScrollTop = $(projectElem).scrollTop();
+				
+				if(currentScrollTop < navHeight){
+
+					//Turn off sticky nav when back to the original nav bar
+					$(navElem).removeClass('sticky-nav up down');
+
+				}else{
+
+					//Turn off sticky nav when passed original nav bar 
+					$(navElem).addClass('sticky-nav');
+
+					// Make sure they scroll more than delta
+					if(Math.abs(lastScrollTop - currentScrollTop) <= delta) return;
+					
+					// Check scroll direction
+					if (currentScrollTop > lastScrollTop){
+						// Scroll down to hide the sticky nav bar
+						if($(navElem).hasClass('down')) $(navElem).removeClass('down').addClass('up');
+					} else {
+						// Scroll up to show the sticky nav bar
+						$(navElem).addClass('down').removeClass('up');
+					}					
+				}
+
+				//Update the last scroll position
+				lastScrollTop = currentScrollTop;
+
+			}
+
+			//Run checkNavbar every .3 second when scroll was triggered
+			//So the function will not be fired all the time when scrolling
+			var scrollInterval = setInterval(function(){
+				if (didScroll){
+					checkNavbar();
+					didScroll = false;
+				}
+			}, 300);
+
 			//Attach Dismiss Event
 			var collapsePage = function(event){
 				//Destroy Slick slider
 				$(projectElem).find('.slider-contents').slick('unslick');
+				//Clear Scroll Event tracking
+				clearInterval(scrollInterval);
+				$(projectElem).off('scroll');
+				//Reset project page to the top and remove sticky nav
+				$(navElem).removeClass('sticky-nav');
+				$(projectElem).scrollTop(0);
 				//Scroll page back to the previous position
 				$('html, body').animate({
 					scrollTop: currentPosition
