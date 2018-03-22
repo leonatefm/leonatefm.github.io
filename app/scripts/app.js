@@ -1007,7 +1007,7 @@ var bodyScrollLock = (function () {
 			var defaultSlickOption = {
 				arrows: false,
 				dots: true,
-				autoplay: true,
+				//autoplay: true,
 				autoplaySpeed: 2000,
 				speed: 500
 			};
