@@ -948,20 +948,74 @@ var bodyScrollLock = (function () {
 (function ($, window, document) {
 
 	'use strict';
-  
-	$(document).ready(function(){
+
+	$(document).ready(function () {
+
+
+		//Define slick slider options
+		var slickOptions = {
+			'default': {
+				arrows: false,
+				dots: true,
+				autoplay: true,
+				autoplaySpeed: 2000,
+				speed: 500
+			},
+			'dynamic': {
+				arrows: false,
+				dots: true,
+				autoplay: true,
+				autoplaySpeed: 2000,
+				speed: 500,
+				adaptiveHeight: true
+			},
+			'center': {
+				arrows: false,
+				dots: true,
+				autoplay: true,
+				autoplaySpeed: 2000,
+				speed: 500,
+				centerMode: true,
+				centerPadding: '10%'
+			},
+			'mobile': {
+				arrows: false,
+				dots: true,
+				autoplay: true,
+				autoplaySpeed: 2000,
+				speed: 500,
+				centerMode: true,
+				slidesToShow: 3,
+				centerPadding: '10%',
+				responsive: [
+					{
+						breakpoint: 1440,
+						settings: {
+							centerPadding: '5%'
+						}
+					},
+					{
+						breakpoint: 769,
+						settings: {
+							slidesToShow: 1,
+							centerPadding: '20%'
+						}
+					}
+				]
+			}
+		}
 
 		//Nav link smooth scrolling
-	
-		$('.nav-link').on('click', function(event){
+
+		$('.nav-link').on('click', function (event) {
 			var hashtag = $(this).attr('href');
 			smoothScroll(hashtag);
 			event.preventDefault();
 		});
-	
-		var smoothScroll = function(target){
+
+		var smoothScroll = function (target) {
 			var position = $(target).offset().top;
-			if (target=='#home') {
+			if (target == '#home') {
 				position = 0;
 			}
 			$('html, body').animate({
@@ -975,10 +1029,10 @@ var bodyScrollLock = (function () {
 		// *************************
 
 		//Click on project to expand the full page
-		$('.project-page').on('click', function(){
+		$('.project-page').on('click', function () {
 
 			//Return if the page is already expanded
-			if($(this).hasClass('open')) return false;
+			if ($(this).hasClass('open')) return false;
 
 			//Initialize project page if it is collapsed
 			var projectElem = this,
@@ -1003,15 +1057,14 @@ var bodyScrollLock = (function () {
 			}, 300, 'swing');
 			$(projectElem).addClass('open');
 
+
 			//Initialize Slick slider config
-			var defaultSlickOption = {
-				arrows: false,
-				dots: true,
-				//autoplay: true,
-				autoplaySpeed: 2000,
-				speed: 500
-			};
-			$(projectElem).find('.slider-contents').slick(defaultSlickOption);
+			$(projectElem).find('.slider-contents').each(function (index, slider) {
+				var slickType = $(slider).data('slick-type');
+				slickType = slickType&&slickOptions.hasOwnProperty(slickType) ? slickType : 'default';
+				$(slider).slick(slickOptions[slickType]);
+			})
+
 
 			//Tracking Scroll Event to turn on/off sticky nav
 			var didScroll,
@@ -1021,37 +1074,37 @@ var bodyScrollLock = (function () {
 				navHeight = $(navElem).height(),
 				headerHeight = $(projectElem).find('.project-header').height();
 
-			$(projectElem).on('scroll', function(){
+			$(projectElem).on('scroll', function () {
 				didScroll = true;
 			});
 
 			//Check scroll position to turn on/off sticky nav
-			var checkNavbar = function(){
+			var checkNavbar = function () {
 
 				//Record the current scroll position
 				var currentScrollTop = $(projectElem).scrollTop();
-				
-				if(currentScrollTop < navHeight){
+
+				if (currentScrollTop < navHeight) {
 
 					//Turn off sticky nav when back to the original nav bar
 					$(navElem).removeClass('sticky-nav up down');
 
-				}else{
+				} else {
 
 					//Turn off sticky nav when passed original nav bar 
 					$(navElem).addClass('sticky-nav');
 
 					// Make sure they scroll more than delta
-					if(Math.abs(lastScrollTop - currentScrollTop) <= delta) return;
-					
+					if (Math.abs(lastScrollTop - currentScrollTop) <= delta) return;
+
 					// Check scroll direction
-					if (currentScrollTop > lastScrollTop){
+					if (currentScrollTop > lastScrollTop) {
 						// Scroll down to hide the sticky nav bar
-						if($(navElem).hasClass('down')) $(navElem).removeClass('down').addClass('up');
+						if ($(navElem).hasClass('down')) $(navElem).removeClass('down').addClass('up');
 					} else {
 						// Scroll up to show the sticky nav bar
 						$(navElem).addClass('down').removeClass('up');
-					}					
+					}
 				}
 
 				//Update the last scroll position
@@ -1061,15 +1114,15 @@ var bodyScrollLock = (function () {
 
 			//Run checkNavbar every .3 second when scroll was triggered
 			//So the function will not be fired all the time when scrolling
-			var scrollInterval = setInterval(function(){
-				if (didScroll){
+			var scrollInterval = setInterval(function () {
+				if (didScroll) {
 					checkNavbar();
 					didScroll = false;
 				}
 			}, 300);
 
 			//Attach Dismiss Event
-			var collapsePage = function(event){
+			var collapsePage = function (event) {
 				//Destroy Slick slider
 				$(projectElem).find('.slider-contents').slick('unslick');
 				//Clear Scroll Event tracking
@@ -1086,26 +1139,26 @@ var bodyScrollLock = (function () {
 				bodyScrollLock.enableBodyScroll(projectElem);
 				$(projectElem).removeClass('open');
 
-				if (event&&event.stopPropagation) event.stopPropagation();
+				if (event && event.stopPropagation) event.stopPropagation();
 			};
 
 			$(projectElem).find('.close-page').one('click', collapsePage);
-			$(window).one('keyup', function(event){
-				if (event.keyCode&&event.keyCode == 27) collapsePage();
+			$(window).one('keyup', function (event) {
+				if (event.keyCode && event.keyCode == 27) collapsePage();
 			});
 		});
-		
+
 
 		// ***********************
 		// ***  About Section  *** 
 		// ***********************
-	
+
 		//Align the photo height with the about contents
 		$('.about .leftdiv').height($('.about .rightdiv').outerHeight());
-		$(window).resize(function() {
+		$(window).resize(function () {
 			$('.about .leftdiv').height($('.about .rightdiv').outerHeight());
 		});
-	
+
 
 		// **********************
 		// ***  Home Section  *** 
@@ -1118,90 +1171,90 @@ var bodyScrollLock = (function () {
 		// 	//Avoid screen jumping by replace vh height with static height (100% of device height)
 		// 	$('#home').height(window.screen.height);
 		// }
-	
+
 		//Infinite Loop Svg Animation
 		var loopwidth = 110;
 		var loopheight = 50;
 		var points = [
 			[26, 4],
-			[loopwidth-26, loopheight-4],
-			[loopwidth-26, 4],
-			[26, loopheight-4],
+			[loopwidth - 26, loopheight - 4],
+			[loopwidth - 26, 4],
+			[26, loopheight - 4],
 		];
-	
+
 		//leftloop animation
 		var leftloop_svg = d3.select(".left-loop").append("svg")
 			.attr("width", loopwidth)
 			.attr("height", loopheight);
-	
+
 		var leftloop_path = leftloop_svg.append("path")
 			.data([points])
 			.attr("d", d3.svg.line()
-			.tension(0) // Catmull–Rom
-			.interpolate("cardinal-closed"));
-	
+				.tension(0) // Catmull–Rom
+				.interpolate("cardinal-closed"));
+
 		leftloop_svg.selectAll(".point")
 			.data(points)
 			// .enter().append("circle")
 			//   .attr("r", 4)
-			.attr("transform", function(d) { return "translate(" + d + ")"; });
-	
+			.attr("transform", function (d) { return "translate(" + d + ")"; });
+
 		var leftloop_circle = leftloop_svg.append("circle")
 			.attr("r", 3)
 			.attr("transform", "translate(" + points[0] + ")");
-	
+
 		leftloop_transition();
-	
+
 		function leftloop_transition() {
 			leftloop_circle.transition()
-			.duration(4000)
-			.ease('linear')
-			.attrTween("transform", translateAlong(leftloop_path.node()))
-			.each("end", leftloop_transition);
+				.duration(4000)
+				.ease('linear')
+				.attrTween("transform", translateAlong(leftloop_path.node()))
+				.each("end", leftloop_transition);
 		}
-	
+
 		//rightloop animation
 		var rightloop_svg = d3.select(".right-loop").append("svg")
 			.attr("width", loopwidth)
 			.attr("height", loopheight);
-	
+
 		var rightloop_path = rightloop_svg.append("path")
 			.data([points])
 			.attr("d", d3.svg.line()
-			.tension(0) // Catmull–Rom
-			.interpolate("cardinal-closed"));
-	
+				.tension(0) // Catmull–Rom
+				.interpolate("cardinal-closed"));
+
 		rightloop_svg.selectAll(".point")
 			.data(points)
 			// .enter().append("circle")
 			//   .attr("r", 4)
-			.attr("transform", function(d) { return "translate(" + d + ")"; });
-	
+			.attr("transform", function (d) { return "translate(" + d + ")"; });
+
 		var rightloop_circle = rightloop_svg.append("circle")
 			.attr("r", 3)
 			.attr("transform", "translate(" + points[0] + ")");
-	
+
 		rightloop_transition();
-	
+
 		function rightloop_transition() {
 			rightloop_circle.transition()
-			.duration(4000)
-			.ease('linear')
-			.attrTween("transform", translateAlong(rightloop_path.node()))
-			.each("end", rightloop_transition);
+				.duration(4000)
+				.ease('linear')
+				.attrTween("transform", translateAlong(rightloop_path.node()))
+				.each("end", rightloop_transition);
 		}
-	
+
 		// Returns an attrTween for translating along the specified path element.
 		function translateAlong(path) {
 			var l = path.getTotalLength();
-			return function(d, i, a) {
-				return function(t) {
+			return function (d, i, a) {
+				return function (t) {
 					var p = path.getPointAtLength(t * l);
 					return "translate(" + p.x + "," + p.y + ")";
 				};
 			};
 		}
-	
+
 	});
-  
-  })(jQuery, window, document);
+
+})(jQuery, window, document);

@@ -831,7 +831,43 @@ $top-nav-height-sm: 50px;
                     top: 0;
                     left: 0;
                 }
-            }
+			}
+			.center-slider{
+				width: 90%;
+				padding-top: 2rem;
+				@include bp-small{
+					width: 100%;
+				}
+				.slick-list{
+					img{
+						opacity: 0.6;
+						transition: all 0.5s ease-in-out;
+						transform: scale(0.95);
+						@include bp-ex-small{
+							transform: scale(0.9);
+						}
+					}
+					img.slick-center{
+						opacity: 1;
+						transform: scale(1);
+					}
+				}
+			}
+			.mobile-slider{
+				width: 100%;
+				.slick-list{
+					img{
+						margin: 0.5rem;
+						opacity: 0.6;
+						transition: all 0.5s ease-in-out;
+						transform: scale(0.9);
+					}
+					img.slick-center{
+						opacity: 1;
+						transform: scale(1);
+					}
+				}
+			}
             .quote {
                 width: 80%;
                 margin: auto;
