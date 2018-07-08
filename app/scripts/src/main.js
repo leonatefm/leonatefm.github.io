@@ -85,7 +85,7 @@
 		$('.project-page').on('click', function () {
 
 			//Return if the page is already expanded
-			if ($(this).hasClass('open')) return false;
+			if ($(this).hasClass('open')) return;
 
 			//Initialize project page if it is collapsed
 			var projectElem = this,
