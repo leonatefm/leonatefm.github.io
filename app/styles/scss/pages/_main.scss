@@ -143,6 +143,7 @@ a.text-link {
     position: relative;
     display: inline-block;
     color: $text-link;
+    font-weight: 400;
     &:before {
         content: "";
         width: 100%;
