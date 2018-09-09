@@ -93,6 +93,9 @@ h1 {
     @include bp-small {
         font-size: 32px;
     }
+    @include bp-ex-small {
+        font-size: 28px;
+    }
 }
 
 h2 {
@@ -119,6 +122,9 @@ h4 {
     font-weight: $font-weight-normal;
     @include bp-small {
         font-size: 16px;
+    }
+    @include bp-ex-small {
+        font-size: 14px;
     }
 }
 
@@ -645,6 +651,9 @@ $top-nav-height-sm: 50px;
             h1 {
                 padding-top: 0px;
                 text-align: center;
+                @include  bp-ex-small {
+                    padding-top: 10px;
+                }
             }
             h4.role {
                 padding-top: 20px;
@@ -745,9 +754,32 @@ $top-nav-height-sm: 50px;
                     width: 50%;
                     padding: 1rem;
                 }
+                figure {
+                    width: 50%;
+                    padding: 1rem;
+                    margin: 0;
+                    &>img {
+                        width: 100%;
+                        padding: 0;
+                    }
+                }
+                figcaption {
+                    font-size: 0.75rem;
+                    text-align: center;
+                    span {
+                        font-weight: $font-weight-light;
+                        font-style: italic;
+                    }
+                    a {
+                        font-weight: $font-weight-light;
+                    }
+                }
                 @include bp-ex-small {
                     margin: -0.5rem;
                     img {
+                        padding: 0.5rem;
+                    }
+                    figure{
                         padding: 0.5rem;
                     }
                 }
@@ -837,6 +869,30 @@ $top-nav-height-sm: 50px;
                     top: 0;
                     left: 0;
                 }
+            }
+            .macbook-slider {
+                width: 100%;
+                position: relative;
+                .slick-list {
+                    width: 75%;
+                    height: 50%;
+                    margin: auto;
+                    padding: 52% 0 0;   
+                }
+                .slick-track {
+                    position: absolute;
+                    top: 6.5%;
+                    left: 0;
+                }
+                ul.slick-dots {
+                    margin: 10% 0 20px;
+                }
+                .macbook-frame {
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
 			}
 			.center-slider{
 				width: 90%;
@@ -873,18 +929,67 @@ $top-nav-height-sm: 50px;
 						transform: scale(1);
 					}
 				}
-			}
-            .quote {
-                width: 80%;
+            }
+            .multiple-slider{
+                width: auto;
+                margin: 0 -1rem;
+                img{
+                    margin: 1rem 1rem 0;
+                }
+            }
+            .quote-box {
+                width: 90%;
                 margin: auto;
                 border-left: 8px solid #4A90E2;
                 padding: 10px 40px;
+                .quote {
+                    font-weight: $font-weight-normal;
+                    font-style: italic;
+                    margin: 0;
+                }
+                .author {
+                    margin: 10px 0 0 0;
+                }
                 @include bp-ex-small {
                     width: 100%;
                     padding: 10px 20px;
                 }
-                p {
-                    margin: 0;
+            }
+            .parallel-list{
+                list-style-type: none;
+                display: flex;
+                flex-wrap: wrap;
+                padding: 0;
+                font-weight: $font-weight-light;
+                &>li{
+                    flex: 0 0 50%;
+                    &:before{
+                        content:'\2022';
+                        margin-right: 10px;
+                    }
+                    @include bp-ex-small{
+                        flex: 0 0 100%;
+                    }
+                }
+            }
+            .release-list {
+                list-style-type: none;
+                @include bp-ex-small{
+                    padding-left: $side-padding-sm;
+                    padding: 0;
+                }
+                &>li{
+                    min-height: 40px;
+                    line-height: 40px;
+                    font-weight: $font-weight-light;
+                    &>span{
+                        display: inline-block;
+                        font-weight: $font-weight-normal;
+                        &::first-letter{
+                            font-size: 1.5em;
+                            margin-right: 3px;
+                        }
+                    }
                 }
             }
         }
@@ -895,21 +1000,26 @@ $top-nav-height-sm: 50px;
 }
 
 .project-page:nth-child(1) .project-header {
-    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/siq4l.jpg') center 0% no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/iwc.jpg') center 100% no-repeat;
     background-size: 100%;
 }
 
 .project-page:nth-child(2) .project-header {
-    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/me.jpg') center 10% no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/siq4l.jpg') center 0% no-repeat;
     background-size: 100%;
 }
 
 .project-page:nth-child(3) .project-header {
-    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/wallpaper.jpg') center 15% no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/me.jpg') center 10% no-repeat;
     background-size: 100%;
 }
 
 .project-page:nth-child(4) .project-header {
+    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/wallpaper.jpg') center 15% no-repeat;
+    background-size: 100%;
+}
+
+.project-page:nth-child(5) .project-header {
     background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../images/sm.jpg') center 10% no-repeat;
     background-size: 100%;
 }

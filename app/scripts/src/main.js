@@ -55,6 +55,24 @@
 						}
 					}
 				]
+			},
+			'multiple': {
+				arrows: false,
+				dots: true,
+				autoplay: true,
+				autoplaySpeed: 2000,
+				speed: 500,
+				slidesToShow: 3,
+				slidesToScroll: 3,
+				responsive: [
+					{
+						breakpoint: 480,
+						settings: {
+							slidesToShow: 1,
+							slidesToScroll: 1,
+						}
+					}
+				]  
 			}
 		}
 
