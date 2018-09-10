@@ -59,23 +59,22 @@ $text-link: #4A90E2;
 $base-font-size: 16px;
 $base-font-size-sm: 14px;
 $base-line-height: 1.68;
-$font-weight-light: 300;
+$font-weight-light: 200;
 $font-weight-normal: 400;
-$font-weight-medium: 500;
+$font-weight-medium: 600;
 $font-weight-bold: 700;
-* {
+
+*, *::before, *:after {
     box-sizing: border-box;
 }
 
 html {
-    font-family: 'Helvetica Neue', Helvetica, Arial, Roboto, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: $base-font-size;
     line-height: $base-line-height;
-    letter-spacing: 0.3px;
     color: $text-dark;
     @include bp-small {
         font-size: $base-font-size-sm;
-        letter-spacing: 0.2px;
     }
 }
 
@@ -101,9 +100,9 @@ h1 {
 h2 {
     font-size: 28px;
     margin: 0;
-    font-weight: $font-weight-medium;
+    font-weight: $font-weight-bold;
     @include bp-small {
-        font-size: 20px;
+        font-size: 24px;
     }
 }
 
@@ -397,6 +396,7 @@ $top-nav-height-sm: 50px;
         margin-top: 20vh;
         font-weight: $font-weight-light;
         line-height: 1.2;
+        letter-spacing: 1px;
         @include bp-small {
             margin-top: 0;
             position: absolute;
@@ -698,12 +698,11 @@ $top-nav-height-sm: 50px;
                 padding: 40px $side-padding-sm;
             }
             h2 {
-                font-size: 2rem;
                 text-align: center;
                 margin-bottom: 40px;
             }
             h3 {
-                font-weight: $font-weight-normal;
+                //font-weight: $font-weight-normal;
                 margin: 0 0 2rem;
             }
             p {
@@ -963,6 +962,8 @@ $top-nav-height-sm: 50px;
                 font-weight: $font-weight-light;
                 &>li{
                     flex: 0 0 50%;
+                    font-style: italic;
+                    font-size: 0.875em;
                     &:before{
                         content:'\2022';
                         margin-right: 10px;
@@ -979,12 +980,12 @@ $top-nav-height-sm: 50px;
                     padding: 0;
                 }
                 &>li{
-                    min-height: 40px;
-                    line-height: 40px;
+                    min-height: 2.5rem;
+                    line-height: 2.5rem;
                     font-weight: $font-weight-light;
                     &>span{
                         display: inline-block;
-                        font-weight: $font-weight-normal;
+                        font-weight: $font-weight-medium;
                         &::first-letter{
                             font-size: 1.5em;
                             margin-right: 3px;
