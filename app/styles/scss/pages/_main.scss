@@ -11,6 +11,7 @@ $text-dark: #121212;
 $text-gray: #5A5A5A;
 $btn-dark: #121212;
 $text-link: #4A90E2;
+$primary-blue: #4A90E2;
 
 // **************
 // *** Mixins *** 
@@ -939,19 +940,34 @@ $top-nav-height-sm: 50px;
             .quote-box {
                 width: 90%;
                 margin: auto;
-                border-left: 8px solid #4A90E2;
-                padding: 10px 40px;
+                border-left: 8px solid $primary-blue;
+                padding: 20px 30px;
+                background-color: rgba($primary-blue, .1);
                 .quote {
                     font-weight: $font-weight-normal;
                     font-style: italic;
                     margin: 0;
+                    text-indent: 1.5em;
+                    position: relative;
+                    &:before{
+                        position: absolute;
+                        left: -1em;
+                        top: 0;
+                        font-size: 1.5em;
+                        color: $text-gray;
+                        opacity: .3;
+                    }
                 }
                 .author {
-                    margin: 10px 0 0 0;
+                    margin: 10px 0 0;
+                    padding: 5px 0 0;
+                    //border-top: 2px solid white;
+                    color: $text-gray;
                 }
                 @include bp-ex-small {
                     width: 100%;
-                    padding: 10px 20px;
+                    padding: 15px 20px;
+                    border-left: 6px solid $primary-blue;
                 }
             }
             .parallel-list{
