@@ -4,7 +4,6 @@
 
 	$(document).ready(function () {
 
-
 		//Define slick slider options
 		var slickOptions = {
 			'default': {
@@ -94,6 +93,15 @@
 			}, 800);
 		};
 
+		//Load deferred images
+		$('img.deferred').each(function(index, element){
+			$(this).attr('src', $(this).data('src'));
+		});
+
+		//Load deferred videos
+		$('iframe.deferred').each(function(index, element){
+			$(this).attr('src', $(this).data('src'));
+		});
 
 		// *************************
 		// ***  Project Section  *** 
