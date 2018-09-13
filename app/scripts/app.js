@@ -1149,6 +1149,8 @@ var bodyScrollLock = (function () {
 
 			//Attach Dismiss Event
 			var collapsePage = function (event) {
+				//Pause youtube video
+				$(projectElem).find('iframe')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
 				//Destroy Slick slider
 				$(projectElem).find('.slider-contents').slick('unslick');
 				//Clear Scroll Event tracking
