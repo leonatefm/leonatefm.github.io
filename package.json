@@ -5,17 +5,21 @@
   "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.18.7",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
     "gulp-concat": "^2.6.1",
-    "gulp-imagemin": "^3.1.1",
+    "gulp-imagemin": "^7.1.0",
     "gulp-minify-css": "^1.2.4",
     "gulp-plumber": "^1.1.0",
-    "gulp-sass": "^3.1.0",
-    "gulp-sequence": "^0.4.6",
-    "gulp-shell": "^0.5.2",
+    "gulp-sass": "^4.1.0",
+    "gulp-sequence": "^1.0.0",
+    "gulp-shell": "^0.8.0",
     "gulp-sourcemaps": "^2.4.1",
-    "gulp-uglify": "^2.0.1",
+    "gulp-uglify": "^3.0.2",
     "gulp-util": "^3.0.8"
+  },
+  "scripts": {
+    "start": "gulp",
+    "deploy": "gulp deploy"
   }
 }
