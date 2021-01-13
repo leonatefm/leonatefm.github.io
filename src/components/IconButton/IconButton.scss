@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+@import 'scss/_variables';
+@import 'scss/_mixins';
+
+.IconButton {
+  width: $grid-large;
+  height: $grid-large;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+
+  &:active,
+  &:focus,
+  &:active:focus {
+    outline: none;
+  }
+
+  &.IconButton--dark:hover {
+    background-color: rgba($color-background-dark, 0.08);
+  }
+
+  &.IconButton--light:hover {
+    background-color: rgba($color-background-light, 0.08);
+  }
+
+  &.IconButton--dark:active {
+    background-color: rgba($color-background-dark, 0.12);
+  }
+
+  &.IconButton--light:active {
+    background-color: rgba($color-background-light, 0.12);
+  }
+
+  // Focus style for keyboard interaction mode only
+  &.IconButton--dark:focus-visible {
+    border: 1px solid $color-text-dark-primary;
+  }
+
+  &.IconButton--light:focus-visible {
+    border: 1px solid $color-text-light-primary;
+  }
+
+  & > svg {
+    width: $grid-small;
+  }
+
+  &.IconButton--dark > svg {
+    fill: $color-text-dark-primary;
+  }
+
+  &.IconButton--light > svg {
+    fill: $color-text-light-primary;
+  }
+}

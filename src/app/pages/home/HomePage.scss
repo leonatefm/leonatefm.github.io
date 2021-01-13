@@ -1,0 +1,199 @@
+@charset "utf-8";
+
+@import 'scss/_variables';
+@import 'scss/_mixins';
+
+.HomePage {
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+
+  @include bp-medium {
+    min-height: 700px;
+  }
+
+  @include bp-large {
+    min-height: 800px;
+  }
+}
+
+.HomePage-section {
+  flex-basis: 50%;
+  padding: $grid-small $grid-xsmall;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  @include bp-small {
+    padding: $grid-large;
+  }
+
+  @include bp-medium {
+    padding: $grid-xlarge;
+  }
+
+  @include bp-large {
+    padding: $grid-mega;
+  }
+}
+
+.HomePage-header {
+  padding-bottom: 1.2 * $grid-mega;
+
+  @include bp-small {
+    padding-bottom: 1.5 * $grid-mega;
+  }
+
+  @include bp-medium {
+    padding-bottom: 2 * $grid-mega;
+  }
+
+  @include bp-large {
+    padding-bottom: $grid-mega;
+  }
+}
+
+.HomePage-nav {
+  // Match the height of large logo for consitent page layout
+  height: 2.5rem;
+
+  @include bp-medium {
+    height: 3rem;
+  }
+
+  @include bp-large {
+    height: 3.75rem;
+  }
+}
+
+.HomePage-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  @include bp-medium {
+    flex-grow: 2;
+  }
+
+  @include bp-large {
+    flex-grow: 3;
+  }
+}
+
+.HomePage-subtitle {
+  font-size: $font-size-h6;
+  font-weight: $font-weight-light;
+
+  @include bp-small {
+    font-size: $font-size-h5;
+  }
+
+  @include bp-medium {
+    font-size: $font-size-h4;
+  }
+
+  @include bp-large {
+    font-size: $font-size-h2;
+  }
+}
+
+.HomePage-title {
+  font-size: $font-size-h4;
+  font-weight: $font-weight-bold;
+  margin-top: $grid-xxsmall;
+  margin-bottom: $grid-xsmall;
+
+  @include bp-small {
+    font-size: $font-size-h3;
+  }
+
+  @include bp-medium {
+    font-size: $font-size-h2;
+    margin-bottom: $grid-small;
+  }
+
+  @include bp-large {
+    font-size: $font-size-h1;
+    margin-bottom: $grid-large;
+  }
+}
+
+.HomePage-description {
+  font-size: $font-size-body-small;
+  font-weight: $font-weight-light;
+  line-height: 1.5;
+  max-width: 160px;
+
+  @include bp-small {
+    max-width: 240px;
+  }
+
+  @include bp-medium {
+    font-size: $font-size-body;
+    max-width: 280px;
+  }
+}
+
+.HomePage-loop {
+  flex-grow: 1;
+  display: inline-block;
+  // Make sure container height equals to child svg height
+  font-size: 0;
+}
+
+.HomePage-section--design {
+  align-items: flex-end;
+  color: $color-text-dark-primary;
+  background-color: $color-background-light;
+  text-align: right;
+  padding-right: 0;
+
+  .HomePage-header {
+    align-self: flex-start;
+  }
+
+  .HomePage-content {
+    align-items: flex-end;
+    padding-right: $grid-small;
+
+    @include bp-small {
+      padding-right: $grid-medium;
+    }
+
+    @include bp-medium {
+      padding-right: $grid-xlarge;
+    }
+  }
+
+  .HomePage-loop {
+    transform: translateX(50%);
+  }
+}
+
+.HomePage-section--develop {
+  align-items: flex-start;
+  color: $color-text-light-primary;
+  background-color: $color-background-dark;
+  padding-left: 0;
+
+  .HomePage-header {
+    align-self: flex-end;
+  }
+
+  .HomePage-content {
+    align-items: flex-start;
+    padding-left: $grid-small;
+
+    @include bp-small {
+      padding-left: $grid-medium;
+    }
+
+    @include bp-medium {
+      padding-left: $grid-xlarge;
+    }
+  }
+
+  .HomePage-loop {
+    transform: translateX(-50%);
+  }
+}

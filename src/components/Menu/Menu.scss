@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+@import 'scss/_variables';
+@import 'scss/_mixins';
+
+.Menu {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 99;
+  &.open {
+    .Menu-backdrop {
+      opacity: 1;
+    }
+    .Menu-panel {
+      transform: translateY(0);
+      border-radius: 0 0 2rem 2rem;
+    }
+  }
+}
+
+.Menu-backdrop {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: $color-backdrop;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  backdrop-filter: blur(3px);
+}
+
+.Menu-panel {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $color-background-primary;
+  border-radius: 0 0 50% 50%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  transform: translateY(-100%);
+  transition: all 0.3s ease-in-out;
+}
+
+.Menu-content {
+  color: $color-text-dark-secondary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: $grid-large;
+}

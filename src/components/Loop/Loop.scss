@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+@import 'scss/_variables';
+@import 'scss/_mixins';
+
+.Loop {
+  path {
+    fill: none;
+  }
+}
+
+.Loop--dark {
+  path {
+    stroke: $color-background-dark;
+  }
+  circle {
+    fill: $color-background-light;
+  }
+}
+
+.Loop--light {
+  path {
+    stroke: $color-background-light;
+  }
+  circle {
+    fill: $color-background-dark;
+  }
+}

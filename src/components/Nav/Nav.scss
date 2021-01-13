@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+@import 'scss/_variables';
+@import 'scss/_mixins';
+
+.Nav-link {
+  display: inline-block;
+  line-height: 2.5;
+  position: relative;
+  color: $color-text-light-secondary;
+  font-size: $font-size-body-small;
+  transition: color 0.3s ease-in-out;
+
+  &:before {
+    content: '';
+    width: 90%;
+    height: 1px;
+    background-color: $color-text-light-primary;
+    position: absolute;
+    left: 5%;
+    bottom: 0;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  @include hover-supported {
+    color: $color-text-light-primary;
+    &:before {
+      width: 100%;
+      opacity: 1;
+      left: 0;
+      bottom: 5px;
+    }
+  }
+
+  @include bp-large {
+    font-size: $font-size-body;
+  }
+}
+
+.Nav-link + .Nav-link {
+  margin-left: $grid-small;
+
+  @include bp-large {
+    margin-left: $grid-medium;
+  }
+}
+
+.Nav-menu {
+  .Logo-icon {
+    fill: $color-text-dark-secondary;
+  }
+}
+
+.Nav-menuNav {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: $grid-small 0;
+  padding: $grid-xxsmall;
+  border-top: 1px solid rgba($color-text-dark-secondary, 0.5);
+  border-bottom: 1px solid rgba($color-text-dark-secondary, 0.5);
+
+  .Nav-link {
+    color: $color-text-dark-secondary;
+    font-size: $font-size-body;
+    line-height: 3;
+
+    &:before {
+      display: none;
+    }
+
+    @include hover-supported {
+      color: $color-text-dark-primary;
+      font-weight: $font-weight-semibold;
+    }
+  }
+
+  .Nav-link + .Nav-link {
+    margin-left: 0;
+  }
+}

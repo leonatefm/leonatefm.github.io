@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+// ***********************
+// *** Color Variables ***
+// ***********************
+
+$color-text-dark-primary: #121212;
+$color-text-dark-secondary: #5a5a5a;
+$color-text-light-primary: rgba(#ffffff, 0.87);
+$color-text-light-secondary: rgba(#ffffff, 0.6);
+$color-background-primary: #ffffff;
+$color-background-light: #fafafa;
+$color-background-dark: #1c1c1e;
+$color-backdrop: rgba(0, 0, 0, 0.38);
+
+$color-gray-light: #d8d8d8;
+$color-blue-medium: #4a90e2;
+$color-blue-light: rgba($color-blue-medium, 0.1);
+
+// ************************
+// *** Layout Variables ***
+// ************************
+
+$grid-xxsmall: 0.625rem; // 10px
+$grid-xsmall: 1rem; // 16px
+$grid-small: 1.5rem; // 24px
+$grid-medium: 2rem; // 32px
+$grid-large: 2.5rem; // 40px
+$grid-xlarge: 3.75rem; // 60px
+$grid-mega: 5.625rem; // 90px
+
+// ******************
+// *** Typography ***
+// ******************
+
+$font-size-body: 1rem;
+$font-size-body-small: 0.875rem;
+$font-size-h1: 6rem;
+$font-size-h2: 3.75rem;
+$font-size-h3: 3rem;
+$font-size-h4: 2rem;
+$font-size-h5: 1.5rem;
+$font-size-h6: 1.25rem;
+
+$font-weight-lighter: 200;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-semibold: 500;
+$font-weight-bold: 700;

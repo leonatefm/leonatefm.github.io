@@ -1,0 +1,72 @@
+@charset "utf-8";
+
+@import 'scss/_variables';
+@import 'scss/_mixins';
+
+.Logo {
+  display: flex;
+  align-items: center;
+}
+
+.Logo-icon {
+  flex: 0 0 auto;
+  fill: $color-text-dark-primary;
+  width: 2.25rem;
+  height: 2.25rem;
+  @include bp-large {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+.Logo-name {
+  font-weight: $font-weight-lighter;
+  letter-spacing: -1px;
+  font-size: 1.25rem;
+  margin-left: $grid-xxsmall;
+  @include bp-large {
+    font-size: 1.5rem;
+    margin-left: $grid-xsmall;
+  }
+}
+
+.Logo--large {
+  .Logo-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    @include bp-medium {
+      width: 3rem;
+      height: 3rem;
+    }
+    @include bp-large {
+      width: 3.75rem;
+      height: 3.75rem;
+    }
+  }
+  .Logo-name {
+    font-size: 1.25rem;
+    margin-left: $grid-xxsmall;
+    @include bp-small {
+      font-size: 1.5rem;
+    }
+    @include bp-large {
+      font-size: $font-size-h4;
+      margin-left: $grid-xsmall;
+    }
+  }
+}
+
+.Logo--small {
+  .Logo-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    @include bp-small {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+  .Logo-name {
+    font-size: 1rem;
+    margin-left: $grid-xxsmall;
+  }
+}

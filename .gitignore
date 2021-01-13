@@ -13,9 +13,6 @@ results
 npm-debug.log
 node_modules
 
-## Bower
-src/components
-
 ## Sass
 .sass-cache
 
@@ -33,3 +30,6 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
+
+## Cache
+.eslintcache
