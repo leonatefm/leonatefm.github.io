@@ -10,15 +10,6 @@
   top: 0;
   right: 0;
   z-index: 99;
-  &.open {
-    .Menu-backdrop {
-      opacity: 1;
-    }
-    .Menu-panel {
-      transform: translateY(0);
-      border-radius: 0 0 2rem 2rem;
-    }
-  }
 }
 
 .Menu-backdrop {
@@ -28,8 +19,6 @@
   top: 0;
   right: 0;
   background: $color-backdrop;
-  opacity: 0;
-  transition: opacity 0.4s ease;
   backdrop-filter: blur(3px);
 }
 
@@ -39,10 +28,7 @@
   top: 0;
   left: 0;
   background-color: $color-background-primary;
-  border-radius: 0 0 50% 50%;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
-  transform: translateY(-100%);
-  transition: all 0.3s ease-in-out;
 }
 
 .Menu-content {
@@ -52,4 +38,73 @@
   align-items: center;
   justify-content: space-evenly;
   padding: $grid-large;
+}
+
+// CSSTransition styles
+@mixin backdrop-startState {
+  opacity: 0;
+}
+
+@mixin backdrop-endState {
+  opacity: 1;
+}
+
+@mixin backdrop-transition {
+  transition: opacity 0.3s ease;
+}
+
+@mixin panel-startState {
+  transform: translateY(-100%);
+  border-radius: 0 0 50% 50%;
+}
+
+@mixin panel-endState {
+  transform: translateY(0);
+  border-radius: 0 0 2rem 2rem;
+}
+
+@mixin panel-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+.Menu-appear,
+.Menu-exit-done {
+  .Menu-backdrop {
+    @include backdrop-startState;
+  }
+  .Menu-panel {
+    @include panel-startState;
+  }
+}
+
+.Menu-appear-active {
+  .Menu-backdrop {
+    @include backdrop-endState;
+    @include backdrop-transition;
+  }
+  .Menu-panel {
+    @include panel-endState;
+    @include panel-transition;
+  }
+}
+
+.Menu-appear-done,
+.Menu-exit {
+  .Menu-backdrop {
+    @include backdrop-endState;
+  }
+  .Menu-panel {
+    @include panel-endState;
+  }
+}
+
+.Menu-exit-active {
+  .Menu-backdrop {
+    @include backdrop-startState;
+    @include backdrop-transition;
+  }
+  .Menu-panel {
+    @include panel-startState;
+    @include panel-transition;
+  }
 }

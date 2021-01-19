@@ -48,7 +48,7 @@ class Nav extends React.PureComponent {
           {(matches) => (matches ? this.renderNavItems() : this.renderMenu())}
         </MediaQuery>
         {isMenuOpen && (
-          <Menu className={classnames.MENU} clickOff={this.dismissMenu}>
+          <Menu className={classnames.MENU} onDismiss={this.dismissMenu}>
             <Logo size='large' withName />
             <div className={classnames.MENU_NAV}>{this.renderNavItems()}</div>
             <Contact />
