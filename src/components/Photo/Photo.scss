@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+@import 'scss/_variables';
+@import 'scss/_mixins';
+
+.Photo {
+  text-align: center;
+}
+
+.Photo-image {
+  width: 100%;
+}
+
+.Photo-caption {
+  font-size: $font-size-body-small;
+  font-weight: $font-weight-semibold;
+  line-height: 2;
+  margin-top: $grid-xxsmall;
+
+  @include bp-small {
+    font-size: $font-size-body;
+  }
+}
+
+.Photo-metadata {
+  font-size: $font-size-body-xsmall;
+  font-style: italic;
+  font-weight: $font-weight-light;
+  color: $color-text-dark-secondary;
+}

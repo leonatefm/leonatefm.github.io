@@ -3,11 +3,6 @@
 @import 'scss/_variables';
 @import 'scss/_mixins';
 
-.ProjectsPage {
-  // Temporary placeholder space for project expansion
-  padding-bottom: 100vh;
-}
-
 .Project#WatsonClassroom .Project-header {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url('../../../images/projects/iwc.jpg');

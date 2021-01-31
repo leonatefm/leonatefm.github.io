@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+@import 'scss/_variables';
+@import 'scss/_mixins';
+
+.PhotographPage-gallery {
+  width: 100%;
+  column-count: 2;
+  column-gap: $layout-page-padding-x-small;
+  padding: 0 $layout-page-padding-x-small;
+
+  .Photo {
+    break-inside: avoid;
+    margin-bottom: $grid-large;
+  }
+
+  @include bp-small {
+    column-gap: $layout-page-padding-x-medium;
+    padding: 0 $layout-page-padding-x-medium;
+  }
+
+  @include bp-medium {
+    column-count: 3;
+    padding: 0 $layout-page-padding-x-large;
+  }
+
+  @include bp-large {
+    padding: 0 $layout-page-padding-x-xlarge;
+  }
+}
+
+.PhotographPage-more {
+  text-align: center;
+  margin: $grid-medium 0;
+}
