@@ -1,0 +1,498 @@
+@charset "utf-8";
+
+@import 'scss/_variables';
+@import 'scss/_mixins';
+
+.Article-section {
+  padding: $grid-large 0;
+  background-color: $color-background-primary;
+
+  &:nth-child(odd):not(:first-child) {
+    background-color: $color-background-light;
+  }
+
+  @include bp-medium {
+    padding: $grid-xlarge 0;
+  }
+
+  // Project Title
+  h2 {
+    font-size: $font-size-h5;
+    font-weight: $font-weight-bold;
+    text-align: center;
+
+    @include bp-small {
+      font-size: $font-size-h4;
+    }
+
+    @include bp-medium {
+      font-size: $font-size-h2;
+    }
+  }
+
+  // Project timestamp
+  h2 + p {
+    font-size: $font-size-body;
+    font-weight: $font-weight-light;
+    font-style: italic;
+    text-align: center;
+    margin-top: $grid-xxsmall;
+    margin-bottom: 0;
+
+    @include bp-small {
+      font-size: $font-size-h6;
+      margin-top: $grid-xsmall;
+    }
+
+    @include bp-medium {
+      font-size: $font-size-h5;
+      margin-top: $grid-small;
+    }
+  }
+
+  // Section title
+  h4 {
+    font-size: $font-size-h6;
+    font-weight: $font-weight-bold;
+    text-align: center;
+    margin-bottom: $grid-medium;
+
+    @include bp-small {
+      font-size: $font-size-h5;
+      margin-bottom: $grid-medium;
+    }
+
+    @include bp-medium {
+      font-size: $font-size-h4;
+      margin-bottom: $grid-large;
+    }
+  }
+
+  // Section subtitle
+  h5 {
+    font-size: $font-size-body;
+    font-weight: $font-weight-bold;
+    margin-bottom: $grid-medium;
+
+    @include bp-small {
+      font-size: $font-size-h6;
+      font-weight: $font-weight-semibold;
+      margin-bottom: $grid-medium;
+    }
+
+    @include bp-medium {
+      font-size: $font-size-h5;
+      margin-bottom: $grid-large;
+    }
+  }
+
+  // Project body
+  p {
+    font-size: $font-size-body-small;
+    font-weight: $font-weight-light;
+    line-height: 1.68;
+    margin-bottom: $grid-medium;
+
+    b {
+      font-weight: $font-weight-bold;
+    }
+
+    .Button {
+      margin: auto;
+    }
+
+    @include bp-small {
+      font-size: $font-size-body;
+    }
+  }
+
+  // Project list
+  ul {
+    list-style-type: disc;
+    padding-left: $grid-small;
+    margin-bottom: $grid-medium;
+
+    li {
+      font-size: $font-size-body-small;
+      font-weight: $font-weight-light;
+      font-style: italic;
+      line-height: 1.5;
+
+      @include bp-small {
+        line-height: 2;
+      }
+    }
+  }
+}
+
+// Content wrapper for acticle section
+.Article-sectionContent {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 $layout-page-padding-x-small;
+
+  @include bp-small {
+    padding: 0 $layout-page-padding-x-medium;
+  }
+
+  @include bp-large {
+    width: 85%;
+    padding: 0;
+    margin: auto;
+  }
+}
+
+// Multimedia group
+.Article-multimediaGroup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin: $grid-medium (-$grid-xsmall);
+}
+
+.Article-multimedia {
+  padding: $grid-xsmall;
+
+  @include bp-small {
+    margin: auto;
+
+    .Article-multimediaGroup--column-1 & {
+      flex-basis: 90%;
+    }
+
+    .Article-multimediaGroup--column-2 & {
+      flex-basis: 50%;
+    }
+
+    .Article-multimediaGroup--column-3 & {
+      flex-basis: 33.3%;
+    }
+  }
+
+  @include bp-medium {
+    max-width: 80%;
+  }
+}
+
+.Article-multimediaCaption {
+  display: inline-block;
+  width: 100%;
+  font-size: $font-size-body-small;
+  font-weight: $font-weight-bold;
+  text-align: center;
+  margin: $grid-xsmall 0;
+
+  i,
+  .Article-link {
+    font-weight: $font-weight-light;
+  }
+}
+
+.Article-multimediaWrapper {
+  font-size: 0;
+
+  .Article-multimedia--video & {
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    padding-bottom: 56.28%;
+    height: 0;
+
+    iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .Article-multimedia--withBorder & {
+    border: 1px solid $color-gray-light;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+// Slick Sliders
+.Article-slider {
+  margin-bottom: $grid-medium;
+  // Define the dots button styles for slick-slider
+  ul.slick-dots {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin: $grid-small 0;
+
+    li {
+      display: inline-block;
+      margin: 0 5px;
+
+      button {
+        font-size: 0;
+        line-height: 0;
+        color: transparent;
+        display: block;
+        width: 6px;
+        height: 6px;
+        position: relative;
+        padding: 0;
+        outline: none;
+        border: none;
+        background-color: inherit;
+
+        &:before {
+          content: '';
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background-color: $color-gray-light;
+          position: absolute;
+          left: 0;
+          top: 0;
+          transition: all 0.3s ease-in-out;
+        }
+
+        @include keyboard-focus {
+          box-shadow: 0 0 1px 1px $color-blue-medium;
+          &:before {
+            background-color: $color-gray-medium;
+          }
+        }
+
+        @include hover-supported {
+          &:before {
+            background-color: $color-gray-medium;
+          }
+        }
+
+        @include bp-medium {
+          width: 36px;
+          height: 20px;
+
+          &:before {
+            width: 100%;
+            height: 4px;
+            border-radius: 0;
+            left: 0px;
+            top: 8px;
+          }
+        }
+      }
+    }
+
+    li.slick-active {
+      button {
+        &:before {
+          background-color: $color-text-dark-primary;
+        }
+
+        @include hover-supported {
+          &:before {
+            background-color: $color-text-dark-primary;
+          }
+        }
+      }
+    }
+  }
+
+  // Slider with multiple images group
+  &--multiple {
+    margin-left: -$grid-xsmall;
+    margin-right: -$grid-xsmall;
+
+    .slick-slide {
+      padding: 0 $grid-xsmall;
+    }
+  }
+
+  // Slider with a macbook frame
+  &--macbook {
+    position: relative;
+    width: 100%;
+
+    @include bp-large {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .Article-sliderFrame {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .slick-list {
+      width: 75%;
+      height: 50%;
+      margin: auto;
+      padding: 52% 0 0;
+    }
+
+    .slick-track {
+      position: absolute;
+      top: 6.5%;
+      left: 0;
+    }
+
+    ul.slick-dots {
+      margin: 10% 0 20px;
+    }
+  }
+
+  // Slider with iMac frame
+  &--imac {
+    position: relative;
+    width: 100%;
+
+    @include bp-large {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .Article-sliderFrame {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .slick-list {
+      width: 92%;
+      height: 50%;
+      margin: auto;
+      padding: 56.5% 0 0;
+    }
+
+    .slick-track {
+      position: absolute;
+      top: 7%;
+      left: 0;
+    }
+
+    ul.slick-dots {
+      margin: 30% 0 20px;
+    }
+  }
+
+  // Slider with center mode
+  &--center {
+    width: 100%;
+    padding-top: $grid-medium;
+
+    .slick-list {
+      img {
+        opacity: 0.6;
+        transition: all 0.5s ease-in-out;
+        transform: scale(0.9);
+      }
+
+      .slick-center img {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+
+  // Slider with adaptive height
+  &--dynamic {
+    width: 100%;
+
+    @include bp-large {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  // Slider with mobile apps
+  &--mobile {
+    width: 100%;
+
+    .slick-list {
+      img {
+        opacity: 0.6;
+        transition: all 0.5s ease-in-out;
+        transform: scale(0.9);
+      }
+
+      .slick-center img {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+// Text link
+.Article-link {
+  font-weight: $font-weight-normal;
+  color: $color-blue-medium;
+  position: relative;
+  padding: 3px 0;
+
+  &:before {
+    content: '';
+    width: 96%;
+    height: 1px;
+    background-color: $color-blue-medium;
+    position: absolute;
+    left: 2%;
+    bottom: 0;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  @include keyboard-focus {
+    box-shadow: 0 0 1px 1px $color-blue-medium;
+  }
+
+  @include hover-supported {
+    &:before {
+      width: 100%;
+      opacity: 1;
+      left: 0;
+      bottom: 1px;
+    }
+  }
+}
+
+// Quote callout
+.Article-quote {
+  padding: $grid-xsmall $grid-small;
+  background-color: $color-blue-light;
+  border-left: 8px solid $color-blue-medium;
+  border-radius: 4px;
+  margin: $grid-medium 0;
+}
+
+.Article-quoteContent {
+  .Article-section & {
+    font-size: $font-size-body-small;
+    font-weight: $font-weight-normal;
+    margin-bottom: $grid-xsmall;
+  }
+}
+
+.Article-quoteAuthor {
+  .Article-section & {
+    font-size: $font-size-body-small;
+    font-weight: $font-weight-bold;
+    margin-bottom: 0;
+    padding-top: $grid-xxsmall;
+    position: relative;
+
+    &:before {
+      content: '';
+      display: block;
+      width: $grid-large;
+      height: 2px;
+      background-color: $color-blue-medium;
+      position: absolute;
+      top: 0;
+    }
+  }
+}

@@ -1,0 +1,326 @@
+@charset "utf-8";
+
+@import 'scss/_variables';
+@import 'scss/_mixins';
+
+.Project {
+  background-color: $color-background-primary;
+  width: 100%;
+  position: relative;
+  top: 0;
+  // Ensure the broswer scroll bar present above the sticky nav within a project
+  z-index: $z-index-base;
+
+  &.open {
+    position: fixed;
+    z-index: $z-index-project-modal;
+  }
+
+  &-enter,
+  &-exit-done {
+    height: 200px;
+
+    .Project-header {
+      height: 200px;
+    }
+
+    @include bp-medium {
+      height: 300px;
+
+      .Project-header {
+        height: 300px;
+      }
+    }
+  }
+
+  &-enter-active {
+    height: 100vh;
+    transition: all 0.4s ease-in-out 0.1s;
+
+    .Project-header {
+      height: 200px;
+      transition: all 0.4s ease-in-out 0.1s;
+    }
+
+    @include bp-small {
+      .Project-header {
+        height: 272px;
+      }
+    }
+
+    @include bp-medium {
+      .Project-header {
+        height: 388px;
+      }
+    }
+  }
+
+  &-enter-done,
+  &-exit {
+    height: 100vh;
+    overflow-y: auto;
+
+    .Project-header {
+      height: 200px;
+    }
+
+    @include bp-small {
+      .Project-header {
+        height: 272px;
+      }
+    }
+
+    @include bp-medium {
+      .Project-header {
+        height: 388px;
+      }
+    }
+  }
+
+  &-exit-active {
+    height: 200px;
+    transition: all 0.4s ease-in-out 0.1s;
+
+    .Project-header {
+      height: 200px;
+      transition: all 0.4s ease-in-out 0.1s;
+    }
+
+    @include bp-medium {
+      height: 300px;
+
+      .Project-header {
+        height: 300px;
+      }
+    }
+  }
+}
+
+.Project-header {
+  position: relative;
+}
+
+.Project-headerNav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: $grid-xsmall $layout-page-padding-x-small;
+  position: absolute;
+
+  @include bp-medium {
+    padding: $grid-small $layout-page-padding-x-medium;
+  }
+
+  .Logo {
+    color: $color-text-light-primary;
+  }
+  .Logo-icon {
+    fill: $color-text-light-primary;
+  }
+
+  .IconButton {
+    // Apply horizontal offset to align contents with the icon in IconButton
+    transform: translateX(0.5rem);
+  }
+
+  &-enter,
+  &-exit-done {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  &-enter-active {
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 0.4s ease-in-out 0.1s;
+  }
+
+  &-enter-done,
+  &-exit {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &-exit-active {
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 0.4s ease-in-out 0.1s;
+  }
+}
+
+.Project-headerContent {
+  height: 200px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: $grid-xsmall $grid-small;
+  cursor: pointer;
+
+  @include bp-medium {
+    height: 300px;
+    padding: $grid-medium;
+  }
+
+  @include hover-supported {
+    .Project-headerProjectName {
+      animation: shine ease 3s infinite;
+    }
+  }
+
+  @include keyboard-focus {
+    box-shadow: inset 0 0 1px 3px $color-blue-medium;
+    .Project-headerProjectName {
+      animation: shine ease 3s infinite;
+    }
+  }
+
+  &-enter,
+  &-exit-done {
+    transform: translateY(40%);
+    opacity: 0;
+  }
+
+  &-enter-active {
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 0.4s ease-in-out 0.1s;
+  }
+
+  &-enter-done,
+  &-exit {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &-exit-active {
+    transform: translateY(40%);
+    opacity: 0;
+    transition: all 0.4s ease-in-out 0.1s;
+  }
+}
+
+.Project-headerCompanyName {
+  font-size: $font-size-body;
+  font-weight: $font-weight-semibold;
+  text-align: right;
+
+  @include bp-medium {
+    font-size: $font-size-h6;
+  }
+}
+
+.Project-headerProjectName {
+  font-size: $font-size-h4;
+  font-weight: $font-weight-bold;
+  text-align: center;
+
+  @include bp-medium {
+    font-size: $font-size-h2;
+  }
+}
+
+.Project-headerJobTitle {
+  font-size: $font-size-body;
+  font-weight: $font-weight-light;
+  text-align: center;
+
+  @include bp-medium {
+    font-size: $font-size-h5;
+  }
+}
+
+@keyframes shine {
+  0% {
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0px 15px rgba(0, 0, 0, 0.9);
+  }
+  50% {
+    color: rgba(255, 255, 255, 1);
+    text-shadow: 0 1px 15px rgba(255, 255, 255, 0.9);
+  }
+  100% {
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0px 15px rgba(0, 0, 0, 0.9);
+  }
+}
+
+.Project-body {
+  padding-top: $grid-large;
+
+  @include bp-medium {
+    padding-top: $grid-xlarge;
+  }
+
+  &-enter,
+  &-exit-done {
+    transform: translateY(-$grid-xlarge);
+    opacity: 0;
+  }
+
+  &-enter-active {
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 0.4s ease-in-out 0.1s;
+  }
+
+  &-enter-done,
+  &-exit {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &-exit-active {
+    transform: translateY(-$grid-xlarge);
+    opacity: 0;
+    transition: all 0.4s ease-in-out 0.1s;
+  }
+}
+
+.Project-stickyNav {
+  width: 100%;
+  background-color: rgba($color-background-primary, 0.95);
+  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: space-between;
+  padding: $grid-xsmall $layout-page-padding-x-small;
+  position: fixed;
+  top: 0;
+  z-index: $z-index-sticky-nav;
+
+  @include bp-medium {
+    padding: $grid-small $layout-page-padding-x-medium;
+  }
+
+  .Logo {
+    color: $color-text-dark-primary;
+  }
+  .Logo-icon {
+    fill: $color-text-dark-primary;
+  }
+
+  .IconButton {
+    // Apply horizontal offset to align contents with the icon in IconButton
+    transform: translateX(0.5rem);
+  }
+
+  &-enter,
+  &-exit-done {
+    transform: translateY(-100%);
+  }
+
+  &-enter-active {
+    transform: translateY(0);
+    transition: all 0.3s ease-in-out;
+  }
+
+  &-enter-done,
+  &-exit {
+    transform: translateY(0);
+  }
+
+  &-exit-active {
+    transform: translateY(-100%);
+    transition: all 0.3s ease-in-out;
+  }
+}

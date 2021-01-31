@@ -5,13 +5,17 @@
     "body-scroll-lock": "^3.1.5",
     "classnames": "^2.2.6",
     "d3": "^3.5.17",
+    "focus-trap": "^6.3.0",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-responsive": "^8.2.0",
     "react-scripts": "4.0.1",
-    "react-transition-group": "^4.4.1"
+    "react-slick": "^0.28.0",
+    "react-transition-group": "^4.4.1",
+    "slick-carousel": "^1.8.1",
+    "sweet-scroll": "^4.0.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.6",

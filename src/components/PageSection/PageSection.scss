@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+@import 'scss/_variables';
+@import 'scss/_mixins';
+
+.PageSection-header {
+  padding: $grid-xlarge 0;
+
+  @include bp-small {
+    padding: $grid-mega 0;
+  }
+}
+
+.PageSection-headerIcon {
+  width: 6rem;
+  height: 6rem;
+  border: 2px solid $color-text-dark-primary;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+
+  & > svg {
+    width: 3rem;
+    height: 3rem;
+    stroke: $color-text-dark-primary;
+  }
+}
+
+.PageSection-headerContent {
+  font-size: $font-size-body-small;
+  font-weight: $font-weight-light;
+  text-align: center;
+  line-height: 2;
+  margin: $grid-large $layout-page-padding-x-xsmall 0;
+  position: relative;
+
+  & > svg.icon-quote {
+    fill: $color-text-dark-primary;
+    position: absolute;
+    display: none;
+
+    @include bp-small {
+      display: block;
+      width: $grid-medium;
+      height: $grid-medium;
+      left: calc(-#{$grid-medium} - 0.2rem);
+    }
+
+    @include bp-medium {
+      width: $grid-large;
+      height: $grid-large;
+      left: calc(-#{$grid-large} - 1rem);
+    }
+  }
+
+  @include bp-small {
+    font-size: $font-size-body;
+    margin: $grid-large calc(#{$layout-page-padding-x-small} + #{$grid-medium})
+      0;
+  }
+
+  @include bp-medium {
+    width: 80%;
+    max-width: 1080px;
+    margin: $grid-large auto 0;
+  }
+}

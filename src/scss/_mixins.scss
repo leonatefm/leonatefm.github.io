@@ -39,3 +39,18 @@
     }
   }
 }
+
+// **************************
+// ***   Keyboard Focus   ***
+// **************************
+
+@mixin keyboard-focus {
+  &:active,
+  &:focus,
+  &:active:focus {
+    outline: none;
+  }
+  &:focus-visible {
+    @content;
+  }
+}

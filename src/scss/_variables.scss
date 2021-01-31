@@ -14,13 +14,15 @@ $color-background-dark: #1c1c1e;
 $color-backdrop: rgba(0, 0, 0, 0.38);
 
 $color-gray-light: #d8d8d8;
+$color-gray-medium: #757575;
 $color-blue-medium: #4a90e2;
 $color-blue-light: rgba($color-blue-medium, 0.1);
 
 // ************************
-// *** Layout Variables ***
+// *** Grid Variables ***
 // ************************
 
+$grid-micro: 0.5rem; // 8px
 $grid-xxsmall: 0.625rem; // 10px
 $grid-xsmall: 1rem; // 16px
 $grid-small: 1.5rem; // 24px
@@ -47,3 +49,18 @@ $font-weight-light: 300;
 $font-weight-normal: 400;
 $font-weight-semibold: 500;
 $font-weight-bold: 700;
+
+// ************************
+// *** Layout Variables ***
+// ************************
+
+$layout-page-padding-x-xsmall: $grid-xsmall;
+$layout-page-padding-x-small: $grid-small;
+$layout-page-padding-x-medium: $grid-large;
+$layout-page-padding-x-large: $grid-xlarge;
+$layout-page-padding-x-xlarge: $grid-mega;
+
+$z-index-base: 1;
+$z-index-project-modal: 9;
+$z-index-menu: 99;
+$z-index-sticky-nav: 99;

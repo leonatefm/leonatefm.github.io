@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+@import 'scss/_variables';
+@import 'scss/_mixins';
+
+.ProjectsPage {
+  // Temporary placeholder space for project expansion
+  padding-bottom: 100vh;
+}
+
+.Project#WatsonClassroom .Project-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('../../../images/projects/iwc.jpg');
+  background-position: center 85%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.Project#StoredIQ .Project-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../../../images/projects/siq4l.jpg');
+  background-position: center 0%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.Project#VictorsExperience .Project-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../../../images/projects/ve.jpg');
+  background-position: center 10%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.Project#RetinaWallpaper .Project-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../../../images/projects/wallpaper.jpg');
+  background-position: center 15%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.Project#SweetMoments .Project-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../../../images/projects/sm.jpg');
+  background-position: center 10%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.WatsonClassroom-releaseList {
+  .Article-section & {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      font-size: $font-size-body-small;
+      font-style: normal;
+      line-height: 2;
+
+      b {
+        display: inline-block;
+        font-weight: $font-weight-bold;
+        &::first-letter {
+          font-size: 1.2em;
+          margin-right: 2px;
+        }
+      }
+
+      @include bp-small {
+        font-size: $font-size-body;
+      }
+    }
+  }
+}
+
+.RetinaWallpaper-slider {
+  img {
+    border: 1px solid $color-gray-light;
+  }
+}

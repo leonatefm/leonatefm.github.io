@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+@import 'scss/_variables';
+@import 'scss/_mixins';
+
+.Button {
+  display: inline-flex;
+  align-items: center;
+  height: $grid-large;
+  font-size: $font-size-body-small;
+  line-height: 1;
+  padding: 0 $grid-small;
+  background-color: transparent;
+  border: 1px solid $color-background-dark;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+
+  .Button-icon {
+    font-size: 0;
+    margin-right: $grid-micro;
+
+    & > svg {
+      width: $grid-small;
+      fill: $color-text-dark-primary;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  @include hover-supported {
+    background-color: $color-background-dark;
+    color: $color-text-light-primary;
+
+    .Button-icon {
+      & > svg {
+        fill: $color-text-light-primary;
+      }
+    }
+  }
+
+  @include keyboard-focus {
+    background-color: $color-background-dark;
+    color: $color-text-light-primary;
+    box-shadow: 0 0 0 2px $color-background-primary,
+      0 0 1px 4px $color-blue-medium;
+
+    .Button-icon {
+      & > svg {
+        fill: $color-text-light-primary;
+      }
+    }
+  }
+}
+
+.Button--large {
+  height: $grid-xlarge;
+  font-size: $font-size-body;
+  font-weight: $font-weight-semibold;
+  padding: 0 $grid-medium;
+
+  .Button-icon {
+    & > svg {
+      width: $grid-medium;
+    }
+  }
+}
