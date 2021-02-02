@@ -36,16 +36,6 @@ class Contact extends React.PureComponent {
         >
           {icons.github}
         </a>
-        {/* <a
-          className='Contact-link'
-          data-method='Instagram'
-          href='https://www.instagram.com/aprilopus/'
-          target='_blank'
-          rel='noopener noreferrer'
-          onClick={this._handleContactClick}
-        >
-          {icons.instagram}
-        </a> */}
         <a
           className='Contact-link'
           data-method='Twitter'
@@ -58,6 +48,16 @@ class Contact extends React.PureComponent {
         </a>
         <a
           className='Contact-link'
+          data-method='Instagram'
+          href='https://www.instagram.com/aprilopus/'
+          target='_blank'
+          rel='noopener noreferrer'
+          onClick={this._handleContactClick}
+        >
+          {icons.instagram}
+        </a>
+        {/* <a
+          className='Contact-link'
           data-method='Email'
           href='mailto:chengqizhufm@gmail.com'
           target='_blank'
@@ -65,7 +65,7 @@ class Contact extends React.PureComponent {
           onClick={this._handleContactClick}
         >
           {icons.email}
-        </a>
+        </a> */}
       </div>
     );
   }

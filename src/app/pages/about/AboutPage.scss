@@ -1,0 +1,113 @@
+@charset "utf-8";
+
+@import 'scss/_variables';
+@import 'scss/_mixins';
+
+.AboutPage-introduction {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-background-light;
+
+  @include bp-large {
+    flex-direction: row;
+  }
+}
+
+.AboutPage-photo {
+  background: url('../../../images/avatar.jpg') center center no-repeat;
+  background-size: cover;
+  width: 30%;
+  padding-top: 30%;
+  margin: $grid-mega auto $grid-small;
+  min-width: 200px;
+  min-height: 200px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 9px $color-background-light, 0 0 0 10px $color-gray-medium;
+
+  @include bp-large {
+    flex-basis: 33.3%;
+    width: auto;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+.AboutPage-story {
+  font-size: $font-size-body-small;
+  font-weight: $font-weight-light;
+  line-height: 1.68;
+  padding: $layout-page-padding-x-large $layout-page-padding-x-small;
+
+  p:not(:last-child) {
+    margin-bottom: $grid-medium;
+  }
+
+  p:last-child {
+    text-align: center;
+  }
+
+  @include bp-small {
+    font-size: $font-size-body;
+    padding: $layout-page-padding-x-large;
+
+    p:last-child {
+      text-align: left;
+    }
+  }
+
+  @include bp-large {
+    flex-basis: 66.7%;
+    flex-grow: 1;
+    padding: $layout-page-padding-x-xlarge;
+  }
+}
+
+.AboutPage-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $layout-page-padding-x-large $layout-page-padding-x-small;
+
+  h5 {
+    display: inline-flex;
+    align-items: center;
+    font-size: $font-size-h6;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+    padding: $grid-small $grid-medium;
+    margin-bottom: $grid-xsmall;
+    border-bottom: 1px solid $color-text-dark-primary;
+    letter-spacing: 1px;
+
+    .icon-chatbox {
+      width: $grid-medium;
+      height: $grid-medium;
+      margin-right: $grid-xxsmall;
+    }
+
+    @include bp-small {
+      font-size: $font-size-h5;
+
+      .icon-chatbox {
+        width: $grid-large;
+        height: $grid-large;
+        margin-right: $grid-xsmall;
+      }
+    }
+  }
+
+  p {
+    font-size: $font-size-body-small;
+    margin-top: $grid-xsmall;
+
+    @include bp-small {
+      font-size: $font-size-body;
+    }
+  }
+
+  .Contact {
+    margin: $grid-large 0;
+  }
+}
