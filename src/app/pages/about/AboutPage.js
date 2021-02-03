@@ -16,7 +16,7 @@ const classnames = {
 
 function AboutPage() {
   return (
-    <PageSection className={classNames(classnames.BASE)}>
+    <PageSection className={classNames(classnames.BASE)} id='about'>
       <PageSection.Header icon={icons.person}>
         To be an empathetic designer, a creative engineer, an insightful
         photographer and an inspiring storyteller.

@@ -61,7 +61,7 @@ function PhotographPage() {
     : [photo_1, photo_2, photo_4, photo_3, photo_5, photo_6];
 
   return (
-    <PageSection className={classNames(classnames.BASE)}>
+    <PageSection className={classNames(classnames.BASE)} id='photograph'>
       <PageSection.Header icon={icons.camera}>
         Photograph makes up another big part of my life outside of work. As much
         as I love traveling to cities and hiking through national parks,

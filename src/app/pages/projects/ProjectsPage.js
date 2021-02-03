@@ -17,7 +17,7 @@ const classnames = {
 
 function ProjectsPage() {
   return (
-    <PageSection className={classNames(classnames.BASE)}>
+    <PageSection className={classNames(classnames.BASE)} id='projects'>
       <PageSection.Header icon={icons.projects}>
         With my hybrid background in design and engineering along with a heart
         filled with curiosity, I've been exploring all the fun and challenging

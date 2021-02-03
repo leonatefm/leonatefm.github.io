@@ -36,7 +36,7 @@ function HomePage() {
   const loopSize = isLargeUp ? 'large' : isMediumUp ? 'medium' : 'small';
 
   return (
-    <div className={classnames.BASE}>
+    <div className={classnames.BASE} id='home'>
       <div
         className={classNames(classnames.SECTION, classnames.SECTION_DESIGN)}
       >

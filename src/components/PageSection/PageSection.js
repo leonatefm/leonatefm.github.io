@@ -9,15 +9,18 @@ const classnames = {
   BASE: 'PageSection',
 };
 
-function PageSection({ children, className }) {
+function PageSection({ children, className, id }) {
   return (
-    <div className={classNames(classnames.BASE, className)}>{children}</div>
+    <div className={classNames(classnames.BASE, className)} id={id}>
+      {children}
+    </div>
   );
 }
 
 PageSection.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
+  id: PropTypes.string,
 };
 
 PageSection.Header = Header;

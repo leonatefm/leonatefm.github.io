@@ -7,6 +7,7 @@ import icons from 'lib/icons';
 import Logo from 'components/Logo';
 import MediaQuery from 'react-responsive';
 import Menu from 'components/Menu';
+import SweetScroll from 'sweet-scroll';
 
 const classnames = {
   BASE: 'Nav',
@@ -38,6 +39,17 @@ class Nav extends React.PureComponent {
   state = {
     isMenuOpen: false,
   };
+
+  componentDidMount() {
+    this.scroller = new SweetScroll({
+      duration: 500,
+      easing: 'easeInOutQuad',
+    });
+  }
+
+  componentWillUnmount() {
+    this.scroller.destroy();
+  }
 
   render() {
     const { isMenuOpen } = this.state;
@@ -94,6 +106,8 @@ class Nav extends React.PureComponent {
   _handlerClick = (event) => {
     const target = event.currentTarget;
     const href = target.getAttribute('href');
+    event.preventDefault();
+    this.scroller.to(href);
   };
 }
 
