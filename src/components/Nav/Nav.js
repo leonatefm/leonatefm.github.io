@@ -7,6 +7,7 @@ import icons from 'lib/icons';
 import Logo from 'components/Logo';
 import MediaQuery from 'react-responsive';
 import Menu from 'components/Menu';
+import ReactGA from 'react-ga';
 import SweetScroll from 'sweet-scroll';
 
 const classnames = {
@@ -40,6 +41,8 @@ class Nav extends React.PureComponent {
     isMenuOpen: false,
   };
 
+  menuRef = React.createRef();
+
   componentDidMount() {
     this.scroller = new SweetScroll({
       duration: 500,
@@ -60,7 +63,11 @@ class Nav extends React.PureComponent {
           {(matches) => (matches ? this.renderNavItems() : this.renderMenu())}
         </MediaQuery>
         {isMenuOpen && (
-          <Menu className={classnames.MENU} onDismiss={this.dismissMenu}>
+          <Menu
+            className={classnames.MENU}
+            onDismiss={this.dismissMenu}
+            ref={this.menuRef}
+          >
             <Logo size='large' withName />
             <div className={classnames.MENU_NAV}>{this.renderNavItems()}</div>
             <Contact />
@@ -106,7 +113,16 @@ class Nav extends React.PureComponent {
   _handlerClick = (event) => {
     const target = event.currentTarget;
     const href = target.getAttribute('href');
+
     event.preventDefault();
+
+    ReactGA.event({
+      category: 'Navigation',
+      action: 'Click',
+      label: href,
+    });
+
+    this.menuRef.current.dismissMenu();
     this.scroller.to(href);
   };
 }

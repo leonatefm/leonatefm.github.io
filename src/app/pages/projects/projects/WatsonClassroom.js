@@ -113,7 +113,7 @@ function WatsonClassroom() {
   return (
     <Project className={classnames.BASE} id='WatsonClassroom'>
       <Project.Header
-        companyName='IBM Wastson Education'
+        companyName='IBM Watson Education'
         jobTitle='Front End Developer Lead'
         projectName='Watson Classroom'
       />

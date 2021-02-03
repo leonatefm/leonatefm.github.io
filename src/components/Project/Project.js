@@ -10,6 +10,7 @@ import IconButton from 'components/IconButton';
 import icons from 'lib/icons';
 import Logo from 'components/Logo';
 import PropTypes from 'prop-types';
+import ReactGA from 'react-ga';
 import SweetScroll from 'sweet-scroll';
 
 const classnames = {
@@ -36,6 +37,7 @@ class Project extends React.PureComponent {
 
   scrollPositionBeforeOpen = window.scrollY;
   lastScrollTop = 0;
+  projectName;
 
   componentDidMount() {
     this.scroller = new SweetScroll({
@@ -59,6 +61,8 @@ class Project extends React.PureComponent {
           openProject: this.openProject,
           closeProject: this.closeProject,
         };
+        // Get project name for GA event tracking
+        this.projectName = child.props.projectName;
         return React.cloneElement(child, headerProps);
       } else if (child.type === Body) {
         const bodyProps = {
@@ -128,6 +132,8 @@ class Project extends React.PureComponent {
 
     document.addEventListener('keydown', this._handleKeydown);
     this.projectRef.current.addEventListener('scroll', this._handleScroll);
+
+    this.sendGAEvent();
   };
 
   closeProject = () => {
@@ -147,6 +153,14 @@ class Project extends React.PureComponent {
 
     document.removeEventListener('keydown', this._handleKeydown);
     this.projectRef.current.removeEventListener('scroll', this._handleScroll);
+  };
+
+  sendGAEvent = () => {
+    ReactGA.event({
+      category: 'Projects',
+      action: 'Click',
+      label: this.projectName,
+    });
   };
 
   /* Event handler */

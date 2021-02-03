@@ -1,16 +1,16 @@
 import './Contact.scss';
 import * as React from 'react';
 import icons from '../../lib/icons';
-// import ReactGA from 'react-ga';
+import ReactGA from 'react-ga';
 
 class Contact extends React.PureComponent {
   _handleContactClick = (event) => {
-    // const contactMethod = event.currentTarget.dataset.method;
-    // ReactGA.event({
-    //   category: 'Contact',
-    //   action: 'Click',
-    //   label: contactMethod,
-    // });
+    const contactMethod = event.currentTarget.dataset.method;
+    ReactGA.event({
+      category: 'Contact',
+      action: 'Click',
+      label: contactMethod,
+    });
   };
 
   render() {
