@@ -33,3 +33,6 @@ $RECYCLE.BIN/
 
 ## Cache
 .eslintcache
+
+## CRA Build
+build/
