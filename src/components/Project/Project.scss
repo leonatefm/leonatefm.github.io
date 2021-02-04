@@ -14,6 +14,7 @@
   &.open {
     position: fixed;
     z-index: $z-index-project-modal;
+    overflow-y: auto;
   }
 
   &-enter,
@@ -35,11 +36,11 @@
 
   &-enter-active {
     height: 100vh;
-    transition: all 0.4s ease-in-out 0.1s;
+    transition: height 0.4s ease-in-out 0.1s;
 
     .Project-header {
       height: 200px;
-      transition: all 0.4s ease-in-out 0.1s;
+      transition: height 0.4s ease-in-out 0.1s;
     }
 
     @include bp-small {
@@ -58,7 +59,6 @@
   &-enter-done,
   &-exit {
     height: 100vh;
-    overflow-y: auto;
 
     .Project-header {
       height: 200px;
@@ -79,11 +79,11 @@
 
   &-exit-active {
     height: 200px;
-    transition: all 0.4s ease-in-out 0.1s;
+    transition: height 0.4s ease-in-out 0.1s;
 
     .Project-header {
       height: 200px;
-      transition: all 0.4s ease-in-out 0.1s;
+      transition: height 0.4s ease-in-out 0.1s;
     }
 
     @include bp-medium {

@@ -121,8 +121,6 @@ class Project extends React.PureComponent {
     const projectPosition = this.projectRef.current.offsetTop;
     this.scroller.toTop(projectPosition);
 
-    disableBodyScroll(this.projectRef.current);
-
     this.setState({
       isOpen: true,
     });
@@ -141,8 +139,6 @@ class Project extends React.PureComponent {
     this.projectRef.current.scrollTop = 0;
     // Scroll body back to the position before open the project
     this.scroller.toTop(this.scrollPositionBeforeOpen);
-
-    enableBodyScroll(this.projectRef.current);
 
     this.setState({
       isOpen: false,
@@ -165,14 +161,19 @@ class Project extends React.PureComponent {
 
   /* Event handler */
 
-  // Set fix position after project open animation to avoid resizing impact
   _handleProjectOpened = () => {
+    // Set fix position after project open animation to avoid resizing impact
     this.projectRef.current.classList.add('open');
+    // Disbale body scroll after project open animation to avoid content jump caused by
+    // applying 'overflow: hidden' in body element.
+    disableBodyScroll(this.projectRef.current);
   };
 
-  // Remove fix position before project close to enable close animation
   _handleProjectWillClose = () => {
+    // Remove fix position before project close to enable close animation
     this.projectRef.current.classList.remove('open');
+
+    enableBodyScroll(this.projectRef.current);
   };
 
   _handleKeydown = (event) => {
