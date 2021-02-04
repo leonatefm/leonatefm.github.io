@@ -33,6 +33,16 @@
     }
   }
 
+  @include keyboard-focus {
+    color: $color-text-light-primary;
+    &:before {
+      width: 100%;
+      opacity: 1;
+      left: 0;
+      bottom: 5px;
+    }
+  }
+
   @include bp-large {
     font-size: $font-size-body;
   }
@@ -74,6 +84,12 @@
     @include hover-supported {
       color: $color-text-dark-primary;
       font-weight: $font-weight-semibold;
+    }
+
+    @include keyboard-focus {
+      color: $color-text-dark-primary;
+      font-weight: $font-weight-semibold;
+      box-shadow: 0 0 1px 2px $color-blue-medium;
     }
   }
 

@@ -122,7 +122,8 @@ class Nav extends React.PureComponent {
       label: href,
     });
 
-    this.menuRef.current.dismissMenu();
+    // Dismiss menu if open
+    this.menuRef.current && this.menuRef.current.dismissMenu();
     this.scroller.to(href);
   };
 }

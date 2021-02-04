@@ -2,9 +2,10 @@ import './Menu.scss';
 import * as React from 'react';
 import classNames from 'classnames';
 import { CSSTransition } from 'react-transition-group';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import focusTrap from 'lib/focus-trap';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 const classnames = {
   BACKDROP: 'Menu-backdrop',
@@ -28,11 +29,18 @@ class Menu extends React.PureComponent {
   componentDidMount() {
     document.getElementById('root').appendChild(this.el);
     disableBodyScroll(this.el);
+    // Trap focus in the menu
+    focusTrap.updateContainerElements(this.el);
+    focusTrap.activate();
+    document.addEventListener('keydown', this._handleKeydown);
   }
 
   componentWillUnmount() {
     document.getElementById('root').removeChild(this.el);
     enableBodyScroll(this.el);
+    // Remove focus trap
+    focusTrap.deactivate();
+    document.removeEventListener('keydown', this._handleKeydown);
   }
 
   dismissMenu = () => {
@@ -63,6 +71,16 @@ class Menu extends React.PureComponent {
       this.el
     );
   }
+
+  /* Event handler */
+
+  _handleKeydown = (event) => {
+    if (event.key === 'Escape') {
+      this.dismissMenu();
+    } else {
+      return false;
+    }
+  };
 }
 
 export default Menu;
