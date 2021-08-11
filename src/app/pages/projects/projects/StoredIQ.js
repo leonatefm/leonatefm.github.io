@@ -41,7 +41,7 @@ const classnames = {
 const videoSources = {
   youtube: 'https://www.youtube.com/embed/f-P4d4WlSyk?rel=0&enablejsapi=1',
   cuplayer:
-    'http://go.plvideo.cn/front/video/preview?vid=adb1a48b180ed26aa74492851ff569a4_a',
+    'https://go.plvideo.cn/front/video/preview?vid=adb1a48b180ed26aa74492851ff569a4_a',
 };
 
 function StoredIq() {

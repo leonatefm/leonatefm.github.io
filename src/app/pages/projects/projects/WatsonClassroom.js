@@ -40,7 +40,7 @@ const classnames = {
 const videoSources = {
   youtube: 'https://www.youtube.com/embed/nJr9j0yXEik?rel=0&enablejsapi=1',
   cuplayer:
-    'http://go.plvideo.cn/front/video/preview?vid=adb1a48b183b917ad5c9daa24e95a0a2_a',
+    'https://go.plvideo.cn/front/video/preview?vid=adb1a48b183b917ad5c9daa24e95a0a2_a',
 };
 
 function WatsonClassroom() {
