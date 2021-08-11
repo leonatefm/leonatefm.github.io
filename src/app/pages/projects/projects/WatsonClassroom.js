@@ -30,10 +30,17 @@ import image_persona_jamie from 'images/projects/iwc/persona_jamie.jpg';
 import image_styleguide_1 from 'images/projects/iwc/styleguide_1.jpg';
 import image_styleguide_2 from 'images/projects/iwc/styleguide_2.jpg';
 import Project from 'components/Project';
+import youtubeUtils from 'lib/youtubeUtils';
 
 const classnames = {
   BASE: 'WatsonClassroom',
   RELEASE_LIST: 'WatsonClassroom-releaseList',
+};
+
+const videoSources = {
+  youtube: 'https://www.youtube.com/embed/nJr9j0yXEik?rel=0&enablejsapi=1',
+  cuplayer:
+    'http://go.plvideo.cn/front/video/preview?vid=adb1a48b183b917ad5c9daa24e95a0a2_a',
 };
 
 function WatsonClassroom() {
@@ -145,7 +152,11 @@ function WatsonClassroom() {
                 allow='encrypted-media'
                 allowFullScreen
                 frameBorder='0'
-                src='https://www.youtube.com/embed/nJr9j0yXEik?rel=0&amp;showinfo=0&enablejsapi=1'
+                src={
+                  youtubeUtils.canAccess() === true
+                    ? videoSources.youtube
+                    : videoSources.cuplayer
+                }
                 title='Introduction video for IBM Watson Classroom'
               ></iframe>
             </Article.Multimedia>

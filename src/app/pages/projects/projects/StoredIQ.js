@@ -32,9 +32,16 @@ import image_product_14 from 'images/projects/siq4l/product/14.jpg';
 import image_sponsor_user_program from 'images/projects/siq4l/siq4l-sponsor-user-program.jpg';
 import image_user_ecosystem from 'images/projects/siq4l/siq4l-user-ecosystem.jpg';
 import Project from 'components/Project';
+import youtubeUtils from 'lib/youtubeUtils';
 
 const classnames = {
   BASE: 'StoredIQ',
+};
+
+const videoSources = {
+  youtube: 'https://www.youtube.com/embed/f-P4d4WlSyk?rel=0&enablejsapi=1',
+  cuplayer:
+    'http://go.plvideo.cn/front/video/preview?vid=adb1a48b180ed26aa74492851ff569a4_a',
 };
 
 function StoredIq() {
@@ -162,7 +169,11 @@ function StoredIq() {
                 allow='encrypted-media'
                 allowFullScreen
                 frameBorder='0'
-                src='https://www.youtube.com/embed/f-P4d4WlSyk?rel=0&amp;showinfo=0&enablejsapi=1'
+                src={
+                  youtubeUtils.canAccess() === true
+                    ? videoSources.youtube
+                    : videoSources.cuplayer
+                }
                 title='Introduction video for StoredIQ for Legal'
               ></iframe>
             </Article.Multimedia>
