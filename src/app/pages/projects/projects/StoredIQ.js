@@ -49,7 +49,7 @@ function StoredIq() {
     {
       name: 'Rose Newton',
       title: 'Design Manager',
-      link: 'http://www.rosenewton.com',
+      link: 'https://www.rosenewton.com',
     },
     {
       name: 'Vickie Culbertson',
@@ -69,12 +69,12 @@ function StoredIq() {
     {
       name: 'McKenzie Carlile',
       title: 'UX Designer',
-      link: 'http://www.mckenziecarlile.com',
+      link: 'https://www.mckenziecarlile.com',
     },
     {
       name: 'Derrick Ligon',
       title: 'Visual Designer',
-      link: 'http://www.derrickligon.com',
+      link: 'https://www.derrickligon.com',
     },
     {
       name: 'Noelle Hoffman',
@@ -84,12 +84,12 @@ function StoredIq() {
     {
       name: 'Amanda McMicken',
       title: 'Visual Designer',
-      link: 'http://amandamcmicken.com',
+      link: 'https://amandamcmicken.com',
     },
     {
       name: 'Hal Wuertz',
       title: 'UX Designer & Researcher',
-      link: 'http://halwuertz.com',
+      link: 'https://halwuertz.com',
     },
     {
       name: 'Meghan Corbett',
@@ -536,7 +536,7 @@ function StoredIq() {
           <br />
           <p className='centered'>
             <Button
-              href='http://www.ibm.com/us-en/marketplace/ibm-storediq-for-legal'
+              href='https://www.ibm.com/products/storediq-for-legal'
               icon={icons.compass}
               rel='noreferrer'
               size='large'
