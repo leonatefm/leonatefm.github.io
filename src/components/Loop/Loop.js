@@ -94,13 +94,8 @@ class Loop extends React.PureComponent {
 
   renderLoop() {
     const size = this.props.size;
-    const {
-      circleMargin,
-      circleRadius,
-      loopRadius,
-      xAdjustment,
-      yAdjustment,
-    } = sizeParams[size];
+    const { circleMargin, circleRadius, loopRadius, xAdjustment, yAdjustment } =
+      sizeParams[size];
     const loopWidth = this.getLoopWidth();
     const loopHeight = this.getLoopHeight();
     const xOffset =
