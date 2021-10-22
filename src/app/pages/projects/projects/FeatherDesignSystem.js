@@ -190,7 +190,7 @@ function FeatherDesignSystem() {
             I joined Twitter at 2019 with a special title called Design
             Technologist, which was turned into Design Engineer later. Although
             the words in this title seemed to be more straightforward after the
-            refinement, there were still many questions around what I do, like
+            refinement, there were still many questions around what I did, like
             designing or engineering? Well, I actually did both, and that's
             exactly one of the reasons why I was so obsessed with this hybrid
             role. As a Design Engineer at Twitter, I primarily worked on Feather
@@ -239,7 +239,7 @@ function FeatherDesignSystem() {
         <Article.Section>
           <h4>Core Features</h4>
           <p>
-            We believe a good design system should have three key features:
+            We believe a good design system should have three key features:{' '}
             <b>managed design assets</b>, <b>reusable code</b> and{' '}
             <b>clear documentation</b>. All these three areas are where the
             Feather team spend most of our time and effort working on. With

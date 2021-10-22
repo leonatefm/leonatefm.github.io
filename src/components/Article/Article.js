@@ -118,7 +118,7 @@ function Slider({ children, className, type }) {
   const defaultSettings = {
     arrows: false,
     dots: true,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 2000,
     speed: 500,
   };
