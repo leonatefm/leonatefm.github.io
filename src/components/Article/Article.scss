@@ -11,8 +11,17 @@
     background-color: $color-background-light;
   }
 
+  &:first-child {
+    padding-top: $grid-large;
+    padding-bottom: 0;
+  }
+
   @include bp-medium {
     padding: $grid-xlarge 0;
+  }
+
+  @include bp-large {
+    padding: $grid-mega 0;
   }
 
   // Project Title
@@ -72,17 +81,16 @@
   h5 {
     font-size: $font-size-body;
     font-weight: $font-weight-bold;
-    margin-bottom: $grid-medium;
+    line-height: 1.5;
+    margin-bottom: $grid-xxsmall;
 
     @include bp-small {
       font-size: $font-size-h6;
       font-weight: $font-weight-semibold;
-      margin-bottom: $grid-medium;
     }
 
     @include bp-medium {
       font-size: $font-size-h5;
-      margin-bottom: $grid-large;
     }
   }
 
@@ -91,7 +99,7 @@
     font-size: $font-size-body-small;
     font-weight: $font-weight-light;
     line-height: 1.68;
-    margin-bottom: $grid-medium;
+    margin-bottom: $grid-small;
 
     b {
       font-weight: $font-weight-bold;
@@ -117,10 +125,10 @@
       font-weight: $font-weight-light;
       font-style: italic;
       line-height: 1.5;
+    }
 
-      @include bp-small {
-        line-height: 2;
-      }
+    li + li {
+      margin-top: 6px;
     }
   }
 

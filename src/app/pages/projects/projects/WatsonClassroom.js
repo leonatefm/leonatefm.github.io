@@ -97,12 +97,12 @@ function WatsonClassroom() {
     },
     {
       name: 'Shali Sasidharan',
-      title: 'Front End Developer',
+      title: 'Front End Engineer',
       link: 'https://www.linkedin.com/in/shalisasidharan',
     },
     {
       name: 'James Line',
-      title: 'Front End Developer',
+      title: 'Front End Engineer',
       link: 'https://www.linkedin.com/in/james-line-2a15b79b',
     },
     {
@@ -112,7 +112,7 @@ function WatsonClassroom() {
     },
     {
       name: 'Prashanth Kayampady',
-      title: 'Back End Developer Lead',
+      title: 'Back End Engineer Lead',
       link: 'https://www.linkedin.com/in/prashanth-kayampady-b3248843',
     },
   ];
@@ -121,7 +121,7 @@ function WatsonClassroom() {
     <Project className={classnames.BASE} id='WatsonClassroom'>
       <Project.Header
         companyName='IBM Watson Education'
-        jobTitle='Front End Developer Lead'
+        jobTitle='Lead Front End Engineer'
         projectName='Watson Classroom'
       />
       <Project.Body>
@@ -236,11 +236,11 @@ function WatsonClassroom() {
         <Article.Section>
           <h4>My Role</h4>
           <p>
-            <b>My Role:</b> Front End Developer Lead
+            <b>My Role:</b> Lead Front End Engineer
           </p>
           <p>
             After a two-years journey as a UX designer in my previous team, I
-            decided to move on as a Front End Developer in the{' '}
+            decided to move on as a Front End Engineer in the{' '}
             <Article.Link
               href='https://www.ibm.com/watson/education'
               rel='noreferrer'
@@ -256,11 +256,10 @@ function WatsonClassroom() {
             and sprint planning, agile practice improvement, new dev onboarding
             and mentoring, from which I gained more leadership experience and
             skills. Started from April 2018, I officially step up as the Front
-            End Developer Lead to continually work with leadership team,
-            offering managers, designers and the rest of the engineer team to
-            deliver products that aligned with organization value proposition,
-            business strategy, customer priorities and user-centered design
-            intent.
+            End Engineer Lead to continually work with leadership team, offering
+            managers, designers and the rest of the engineer team to deliver
+            products that aligned with organization value proposition, business
+            strategy, customer priorities and user-centered design intent.
           </p>
           <p>
             <b>Core Production Team:</b>{' '}

@@ -19,7 +19,7 @@ function RetinaWallpaper() {
     <Project className={classnames.BASE} id='RetinaWallpaper'>
       <Project.Header
         companyName='Appwill'
-        jobTitle='UX Designer & Web Developer'
+        jobTitle='UI Designer & Web Developer'
         projectName='Retina Wallpaper'
       />
       <Project.Body>

@@ -8,7 +8,6 @@ import {
   RetinaWallpaper,
   SweetMoments,
   FeatherDesignSystem,
-  VictorsExperience,
   WatsonClassroom,
 } from './projects';
 
@@ -33,7 +32,6 @@ function ProjectsPage() {
         <FeatherDesignSystem />
         <WatsonClassroom />
         <StoredIQ />
-        <VictorsExperience />
         <RetinaWallpaper />
         <SweetMoments />
       </PageSection.Body>
