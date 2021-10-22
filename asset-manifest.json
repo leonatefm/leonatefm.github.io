@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/css/main.929a5d66.chunk.css",
-    "main.js": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/js/main.a9014c29.chunk.js",
-    "main.js.map": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/js/main.a9014c29.chunk.js.map",
+    "main.js": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/js/main.dd0706b2.chunk.js",
+    "main.js.map": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/js/main.dd0706b2.chunk.js.map",
     "runtime-main.js": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/js/runtime-main.cd9f2d9c.js",
     "runtime-main.js.map": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/js/runtime-main.cd9f2d9c.js.map",
     "static/css/2.3861bd14.chunk.css": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/css/2.3861bd14.chunk.css",
@@ -119,6 +119,6 @@
     "static/css/2.3861bd14.chunk.css",
     "static/js/2.2318af0b.chunk.js",
     "static/css/main.929a5d66.chunk.css",
-    "static/js/main.a9014c29.chunk.js"
+    "static/js/main.dd0706b2.chunk.js"
   ]
 }
