@@ -10,6 +10,12 @@ import SlickSlider from 'react-slick';
 
 const classnames = {
   BASE: 'Article',
+  CARD: 'Article-card',
+  CARD_ICON: 'Article-cardIcon',
+  CARD_NUMBER: 'Article-cardNumber',
+  CARD_NUMBER_SUFFIX: 'Article-cardNumberSuffix',
+  CARD_LABEL: 'Article-cardLabel',
+  CARD_GROUP: 'Article-cardGroup',
   LINK: 'Article-link',
   MULTIMEIDA: 'Article-multimedia',
   MULTIMEIDA_CAPTION: 'Article-multimediaCaption',
@@ -35,6 +41,8 @@ Article.propTypes = {
   className: PropTypes.string,
 };
 
+Article.Card = Card;
+Article.CardGroup = CardGroup;
 Article.Link = Link;
 Article.Multimedia = Multimedia;
 Article.MultimediaGroup = MultimediaGroup;
@@ -55,11 +63,19 @@ Section.propTypes = {
   className: PropTypes.string,
 };
 
-function Multimedia({ caption, children, className, type, withBorder }) {
+function Multimedia({
+  caption,
+  children,
+  className,
+  type,
+  withBorder,
+  withShadow,
+}) {
   const rootClassnames = classNames(
     classnames.MULTIMEIDA,
     type ? `${classnames.MULTIMEIDA}--${type}` : null,
     withBorder ? `${classnames.MULTIMEIDA}--withBorder` : null,
+    withShadow ? `${classnames.MULTIMEIDA}--withShadow` : null,
     className
   );
 
@@ -79,6 +95,7 @@ Multimedia.propTypes = {
   className: PropTypes.string,
   type: PropTypes.oneOf(['video']),
   withBorder: PropTypes.bool,
+  withShadow: PropTypes.bool,
 };
 
 function MultimediaGroup({ children, className, column }) {
@@ -221,6 +238,42 @@ Quote.propTypes = {
   author: PropTypes.node,
   children: PropTypes.node,
   className: PropTypes.string,
+};
+
+function Card({ className, icon, label, number, numberSuffix }) {
+  return (
+    <div className={classNames(classnames.CARD, className)}>
+      <div className={classnames.CARD_ICON}>{icon}</div>
+      <p className={classnames.CARD_NUMBER}>
+        {number}
+        {numberSuffix && (
+          <span className={classnames.CARD_NUMBER_SUFFIX}>{numberSuffix}</span>
+        )}
+      </p>
+      <p className={classnames.CARD_LABEL}>{label}</p>
+    </div>
+  );
+}
+
+Card.propTypes = {
+  className: PropTypes.string,
+  icon: PropTypes.node,
+  label: PropTypes.string,
+  number: PropTypes.number,
+  numberSuffix: PropTypes.string,
+};
+
+function CardGroup({ className, children }) {
+  return (
+    <div className={classNames(classnames.CARD_GROUP, className)}>
+      {children}
+    </div>
+  );
+}
+
+CardGroup.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node,
 };
 
 export default Article;

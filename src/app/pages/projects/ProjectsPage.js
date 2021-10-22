@@ -7,6 +7,7 @@ import {
   StoredIQ,
   RetinaWallpaper,
   SweetMoments,
+  FeatherDesignSystem,
   VictorsExperience,
   WatsonClassroom,
 } from './projects';
@@ -29,6 +30,7 @@ function ProjectsPage() {
       </PageSection.Header>
 
       <PageSection.Body>
+        <FeatherDesignSystem />
         <WatsonClassroom />
         <StoredIQ />
         <VictorsExperience />

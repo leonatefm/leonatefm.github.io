@@ -107,8 +107,8 @@
   }
 
   // Project list
+  ol,
   ul {
-    list-style-type: disc;
     padding-left: $grid-small;
     margin-bottom: $grid-medium;
 
@@ -122,6 +122,14 @@
         line-height: 2;
       }
     }
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  ul {
+    list-style-type: disc;
   }
 }
 
@@ -208,6 +216,10 @@
 
   .Article-multimedia--withBorder & {
     border: 1px solid $color-gray-light;
+  }
+
+  .Article-multimedia--withShadow & {
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
   }
 
   img {
@@ -495,5 +507,75 @@
       position: absolute;
       top: 0;
     }
+  }
+}
+
+// Card
+.Article-card {
+  background-color: $color-background-light;
+  padding: $grid-large $grid-xsmall;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: $grid-xsmall;
+
+  @include bp-small {
+    padding: $grid-large;
+    border-radius: $grid-small;
+  }
+}
+
+.Article-cardIcon {
+  width: $grid-xlarge;
+  height: $grid-xlarge;
+  background-color: $color-blue-light;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: $grid-xsmall;
+
+  & > svg {
+    width: $grid-medium;
+    height: $grid-medium;
+    color: $color-blue-medium;
+  }
+}
+
+.Article-cardNumber {
+  .Article-section & {
+    font-size: $font-size-h3;
+    font-weight: $font-weight-bold;
+    line-height: 1;
+    margin: 0;
+  }
+}
+
+.Article-cardNumberSuffix {
+  .Article-section & {
+    font-size: $font-size-h4;
+    font-weight: $font-weight-semibold;
+    vertical-align: top;
+  }
+}
+
+.Article-cardLabel {
+  .Article-section & {
+    color: $color-text-dark-secondary;
+    font-size: $font-size-body-small;
+    font-weight: $font-weight-bold;
+    margin: 0;
+  }
+}
+
+.Article-cardGroup {
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $grid-small;
+
+  @include bp-medium {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: $grid-large;
   }
 }
