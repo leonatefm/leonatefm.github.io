@@ -148,7 +148,7 @@ function FeatherDesignSystem() {
           <p>
             Feather started as a HackWeek passion project by a small group of
             designers and engineers, focusing on business products and internal
-            tools. After 7 years’ evolution, it has became to the most
+            tools. After 7 years’ evolution, it has become the most
             sophisticated design system at Twitter, playing a significant role
             at all the Twitter services the world see and use everyday. By the
             time I left Twitter, I recorded these inspiring numbers:
@@ -162,7 +162,7 @@ function FeatherDesignSystem() {
             />
             <Article.Card
               icon={icons.component}
-              label='Component'
+              label='Components'
               number={130}
               numberSuffix='+'
             />
@@ -187,10 +187,10 @@ function FeatherDesignSystem() {
             <b>My Role:</b> Sr. Design Engineer
           </p>
           <p>
-            I joined Twitter at 2019 with a special title called Design
+            I joined Twitter in 2019 with a special title called Design
             Technologist, which was turned into Design Engineer later. Although
-            the words in this title seemed to be more straightforward after the
-            refinement, there were still many questions around what I did, like
+            this new title seemed to be more straightforward after the
+            rewording, there were still many questions around what I did, like
             designing or engineering? Well, I actually did both, and that's
             exactly one of the reasons why I was so obsessed with this hybrid
             role. As a Design Engineer at Twitter, I primarily worked on Feather
@@ -278,13 +278,14 @@ function FeatherDesignSystem() {
             </Article.Multimedia>
           </Article.MultimediaGroup>
           <p>
-            Feather provides managed design assets through a shared Figma
-            library, which contains core styles for all design tokens, like
-            colors and typography, reusable Figma components built with variants
-            and auto-layout which also match our code implementation, common
-            design patterns and guidelines, page templates with different layout
-            serving as boilerplate, and more. Feather’s Figma library helps
-            designers create mockups and prototypes efficiently.
+            We've iterated this design library for a few times in the past,
+            starting with a Sketch library which required manual cloud sync-up,
+            to a beta Figma library with incomplete components after migrating
+            from Sketch, and lastly to the most recent revamped Figma library
+            with all the components rebuilt using the latest Figma features like
+            variants and auto layout v3. There are a few things I learnt
+            throughout this process that I think are the key to a successful
+            design library.
           </p>
           <ul>
             <li>
@@ -536,17 +537,17 @@ function FeatherDesignSystem() {
           </Article.MultimediaGroup>
           <h5>System of Systems</h5>
           <p>
-            We consider the unified design language is the primary approach to
-            unify all the experiences we serve to our customers in different
-            products and platforms. However, having a unified design language is
-            only the first step to make the systems work together better in
-            terms of the outcome. It doesn't really help us define a clear view
-            of the eco-system for all our design systems and answer all the
+            Creating a unified design language is the primary approach we're
+            taking to unify all the experiences we serve to our customers in
+            different products and platforms. However, that is only the first
+            step to make all the systems work together and better, merely
+            focusing on the outcome. It doesn't really help us define a clear
+            view of the eco-system for all our design systems and answer all the
             internal questions we heard, like when should I use which design
             system. This is an inevitable problem the team needs to figure out
             when we gather all the systems and try to make them work together
             seamlessly. We should now start thinking at a higher level rather
-            than a single system level.
+            than from a single system’s point of view.
           </p>
           <p>
             To draw a better picture of design systems future at Twitter, we
