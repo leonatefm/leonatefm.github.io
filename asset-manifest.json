@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/css/main.929a5d66.chunk.css",
-    "main.js": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/js/main.57512613.chunk.js",
-    "main.js.map": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/js/main.57512613.chunk.js.map",
+    "main.css": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/css/main.77ca41e7.chunk.css",
+    "main.js": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/js/main.a018d346.chunk.js",
+    "main.js.map": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/js/main.a018d346.chunk.js.map",
     "runtime-main.js": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/js/runtime-main.cd9f2d9c.js",
     "runtime-main.js.map": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/js/runtime-main.cd9f2d9c.js.map",
     "static/css/2.3861bd14.chunk.css": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/css/2.3861bd14.chunk.css",
-    "static/js/2.2318af0b.chunk.js": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/js/2.2318af0b.chunk.js",
-    "static/js/2.2318af0b.chunk.js.map": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/js/2.2318af0b.chunk.js.map",
+    "static/js/2.672adf1f.chunk.js": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/js/2.672adf1f.chunk.js",
+    "static/js/2.672adf1f.chunk.js.map": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/js/2.672adf1f.chunk.js.map",
     "index.html": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/index.html",
     "static/css/2.3861bd14.chunk.css.map": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/css/2.3861bd14.chunk.css.map",
-    "static/css/main.929a5d66.chunk.css.map": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/css/main.929a5d66.chunk.css.map",
-    "static/js/2.2318af0b.chunk.js.LICENSE.txt": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/js/2.2318af0b.chunk.js.LICENSE.txt",
+    "static/css/main.77ca41e7.chunk.css.map": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/css/main.77ca41e7.chunk.css.map",
+    "static/js/2.672adf1f.chunk.js.LICENSE.txt": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/js/2.672adf1f.chunk.js.LICENSE.txt",
     "static/media/1.25b064d3.jpg": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/media/1.25b064d3.jpg",
     "static/media/1.54d1ed8b.png": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/media/1.54d1ed8b.png",
     "static/media/1.58c9bf8a.jpg": "https://cdn.jsdelivr.net/gh/leonatefm/leonatefm.github.io@gh-pages/static/media/1.58c9bf8a.jpg",
@@ -117,8 +117,8 @@
   "entrypoints": [
     "static/js/runtime-main.cd9f2d9c.js",
     "static/css/2.3861bd14.chunk.css",
-    "static/js/2.2318af0b.chunk.js",
-    "static/css/main.929a5d66.chunk.css",
-    "static/js/main.57512613.chunk.js"
+    "static/js/2.672adf1f.chunk.js",
+    "static/css/main.77ca41e7.chunk.css",
+    "static/js/main.a018d346.chunk.js"
   ]
 }
