@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import Logo from 'components/Logo';
 import Loop from 'components/Loop';
 import Nav from 'components/Nav';
+import Typewriter from 'typewriter-effect/dist/core';
 
 import { useMediaQuery } from 'react-responsive';
 
@@ -35,6 +36,34 @@ function HomePage() {
 
   const loopSize = isLargeUp ? 'large' : isMediumUp ? 'medium' : 'small';
 
+  const designText = React.useRef(null);
+  const developText = React.useRef(null);
+
+  React.useEffect(() => {
+    const designTextTyper = new Typewriter(designText.current, {
+      loop: true,
+    });
+    const developTextTyper = new Typewriter(developText.current, {
+      loop: true,
+    });
+
+    designTextTyper
+      .pauseFor(500)
+      .typeString('I’m a designer ')
+      .pauseFor(1000)
+      .typeString('who creates delightful user experience.')
+      .pauseFor(5000)
+      .start();
+
+    developTextTyper
+      .pauseFor(3000)
+      .typeString('I’m a developer ')
+      .pauseFor(1000)
+      .typeString('who brings the design to life with code.')
+      .pauseFor(5000)
+      .start();
+  }, []);
+
   return (
     <div className={classnames.BASE} id='home'>
       <div
@@ -47,7 +76,7 @@ function HomePage() {
         <div className={classnames.CONTENT}>
           <p className={classnames.SUBTITLE}>Design with</p>
           <p className={classnames.TITLE}>empathy</p>
-          <p className={classnames.DESCRIPTION}>
+          <p className={classnames.DESCRIPTION} ref={designText}>
             I’m a designer who creates delightful user experience.
           </p>
         </div>
@@ -69,7 +98,7 @@ function HomePage() {
         <div className={classnames.CONTENT}>
           <p className={classnames.SUBTITLE}>Develop with</p>
           <p className={classnames.TITLE}>creativity</p>
-          <p className={classnames.DESCRIPTION}>
+          <p className={classnames.DESCRIPTION} ref={developText}>
             I’m a developer who brings the design to life with code.
           </p>
         </div>

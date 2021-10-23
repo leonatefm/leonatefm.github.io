@@ -123,14 +123,18 @@
   font-weight: $font-weight-light;
   line-height: 1.5;
   max-width: 160px;
+  // Use min-height to prevent the Loop position change caused by typerwriter effect
+  min-height: 3 * 1.5 * $font-size-body-small;
 
   @include bp-small {
     max-width: 240px;
+    min-height: 2 * 1.5 * $font-size-body-small;
   }
 
   @include bp-medium {
     font-size: $font-size-body;
     max-width: 280px;
+    min-height: 2 * 1.5 * $font-size-body;
   }
 }
 
