@@ -129,7 +129,7 @@ function VictorsExperience() {
           <br />
           <p className='centered'>
             <Button
-              href='http://victors.engin.umich.edu'
+              href='https://victors.engin.umich.edu'
               icon={icons.compass}
               rel='noreferrer'
               size='large'

@@ -54,7 +54,7 @@ function StoredIq() {
     {
       name: 'Vickie Culbertson',
       title: 'Design Lead',
-      link: 'http://vickieculbertson.com',
+      link: 'https://vickieculbertson.myportfolio.com/',
     },
     {
       name: 'Nick Pausback',

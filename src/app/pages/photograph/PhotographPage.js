@@ -85,7 +85,7 @@ function PhotographPage() {
 
         <p className={classnames.MORE}>
           <Button
-            href='http://photo.chengqizhu.com'
+            href='https://photo.chengqizhu.com'
             icon={icons.photos}
             rel='noreferrer'
             target='_blank'

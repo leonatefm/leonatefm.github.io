@@ -117,7 +117,7 @@ function RetinaWallpaper() {
           <br />
           <p className='centered'>
             <Button
-              href='http://www.apphope.com'
+              href='https://www.apphope.com'
               icon={icons.compass}
               rel='noreferrer'
               size='large'
