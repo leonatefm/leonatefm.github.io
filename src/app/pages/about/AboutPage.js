@@ -58,7 +58,7 @@ function AboutPage() {
               opportunities & collaborations. Feel free to drop a message if you
               wanna talk.
             </p>
-            <p>
+            {/* <p>
               <Button
                 href={`${process.env.PUBLIC_URL}/resume.pdf`}
                 icon={icons.clip}
@@ -68,7 +68,7 @@ function AboutPage() {
               >
                 Resume
               </Button>
-            </p>
+            </p> */}
           </div>
         </div>
         <div className={classnames.CONTACT}>
